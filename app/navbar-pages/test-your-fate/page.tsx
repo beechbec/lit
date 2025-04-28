@@ -44,7 +44,7 @@ export default function TestYourFate() {
                     </p>
                   </div>
 
-                  <Link href="/test-your-fate/quiz">
+                  <Link href="/navbar-pages/test-your-fate/quiz">
                     <Button className="bg-amber-700 hover:bg-amber-800 text-white rounded-full">Take the Quiz</Button>
                   </Link>
                 </div>

@@ -1,5 +1,5 @@
 import type React from "react"
-import { raleway } from "./fonts"
+import { raleway } from "@/lib/fonts"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 

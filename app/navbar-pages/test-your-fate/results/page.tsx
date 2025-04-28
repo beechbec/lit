@@ -5,10 +5,12 @@ import Link from "next/link"
 import { Button } from "@/components/button"
 import { Badge } from "@/components/badge"
 import Navbar from "@/components/navbar"
+import { Suspense } from "react"
 
 type ResultType = "good" | "evil"
 
-export default function Results() {
+// Client component that uses useSearchParams
+function ResultsContent() {
   const searchParams = useSearchParams()
   const type = (searchParams.get("type") || "good") as ResultType
 
@@ -64,7 +66,7 @@ export default function Results() {
         </div>
 
         <div className="flex flex-col space-y-3">
-          <Link href="/navbar-routes/test-your-fate/quiz">
+          <Link href="/navbar-pages/test-your-fate/quiz">
             <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-slate-900">
               Take the Quiz Again
             </Button>
@@ -75,5 +77,14 @@ export default function Results() {
         </div>
       </div>
     </div>
+  )
+}
+
+// Main page component
+export default function Results() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ResultsContent />
+    </Suspense>
   )
 }

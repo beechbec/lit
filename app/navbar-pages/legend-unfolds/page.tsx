@@ -1,8 +1,17 @@
+"use client"
+
 import Image from "next/image"
 import { Button } from "@/components/button"
 import Navbar from "@/components/navbar"
+import { useRef } from "react"
 
 export default function LegendUnfolds() {
+  const bookSectionRef = useRef<HTMLDivElement>(null);
+
+  const handleScrollToBook = () => {
+    bookSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-white">
       <div className="absolute top-6 left-0 right-0 z-20">
@@ -13,7 +22,7 @@ export default function LegendUnfolds() {
       <section
         className="relative flex flex-col items-center justify-center text-center text-white py-32 px-4 min-h-[70vh]"
         style={{
-          backgroundImage: "url('https://i.imgur.com/JZcIDSP.jpg')",
+          backgroundImage: "url('/legend-unfolds.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -24,7 +33,12 @@ export default function LegendUnfolds() {
             The line between good and evil isn't always clear—even in fairy tales
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mb-8">What if your destiny wasn't chosen by you?</h1>
-          <Button className="bg-white text-slate-900 hover:bg-amber-200">Turn the Page</Button>
+          <Button
+            style={{ backgroundColor: "#253544", color: "white" }}
+            onClick={handleScrollToBook}
+          >
+            Turn the Page
+          </Button>
         </div>
       </section>
 
@@ -33,7 +47,7 @@ export default function LegendUnfolds() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center transition-transform duration-300 hover:translate-y-[-5px]">
             <div className="flex justify-center mb-4">
-              <Image src="/logo.svg" alt="Friendship & Identity" width={60} height={60} />
+              <Image src="/friendship-identity.png" alt="Friendship & Identity" width={60} height={60} />
             </div>
             <h3 className="font-bold mb-2">Friendship & Identity</h3>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -41,7 +55,7 @@ export default function LegendUnfolds() {
 
           <div className="text-center transition-transform duration-300 hover:translate-y-[-5px]">
             <div className="flex justify-center mb-4">
-              <Image src="/logo.svg" alt="Good vs Evil" width={60} height={60} />
+              <Image src="/good-vs-evil.png" alt="Good vs Evil" width={60} height={60} />
             </div>
             <h3 className="font-bold mb-2">Good vs Evil</h3>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -49,7 +63,7 @@ export default function LegendUnfolds() {
 
           <div className="text-center transition-transform duration-300 hover:translate-y-[-5px]">
             <div className="flex justify-center mb-4">
-              <Image src="/logo.svg" alt="Beauty vs Inner Strength" width={60} height={60} />
+              <Image src="/beauty-vs-inner.png" alt="Beauty vs Inner Strength" width={60} height={60} />
             </div>
             <h3 className="font-bold mb-2">Beauty vs Inner Strength</h3>
             <p className="text-sm text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
@@ -58,11 +72,11 @@ export default function LegendUnfolds() {
       </section>
 
       {/* Book Section */}
-      <section className="py-12 px-4 bg-cream text-slate-900">
+      <section ref={bookSectionRef} className="py-12 px-4 bg-cream text-slate-900">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
           <div className="relative transition-transform duration-300 hover:scale-[1.02]">
             <Image
-              src="https://i.imgur.com/Yd7bZAM.jpg"
+              src="/book1.png"
               alt="Book Cover"
               width={300}
               height={450}
@@ -114,16 +128,30 @@ export default function LegendUnfolds() {
               <div>
                 <h3 className="font-bold mb-2">See more Books</h3>
                 <div className="grid grid-cols-3 gap-2">
-                  {[1, 2, 3].map((book) => (
-                    <div key={book} className="relative aspect-[2/3] transition-transform duration-300 hover:scale-105">
-                      <Image
-                        src={`https://i.imgur.com/Yd7bZAM.jpg`}
-                        alt={`Book ${book}`}
-                        fill
-                        className="object-cover rounded"
-                      />
-                    </div>
-                  ))}
+                  <div className="relative aspect-[2/3] transition-transform duration-300 hover:scale-105">
+                    <Image
+                      src="/book2.png"
+                      alt="Book 2"
+                      fill
+                      className="object-cover rounded"
+                    />
+                  </div>
+                  <div className="relative aspect-[2/3] transition-transform duration-300 hover:scale-105">
+                    <Image
+                      src="/book3.png"
+                      alt="Book 3"
+                      fill
+                      className="object-cover rounded"
+                    />
+                  </div>
+                  <div className="relative aspect-[2/3] transition-transform duration-300 hover:scale-105">
+                    <Image
+                      src="/book4.png"
+                      alt="Book 4"
+                      fill
+                      className="object-cover rounded"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
