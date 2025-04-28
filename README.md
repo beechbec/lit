@@ -40,7 +40,7 @@ This is an interactive web experience inspired by "The School for Good and Evil.
    npm run dev
    ```
 4. **Open your browser:**
-   Visit [http://localhost:3000](http://localhost:3000)
+   Visit [http://localhost:3000]
 
 ## Assets
 - Place custom images and audio in the `/public` directory (e.g., `/public/music-note.svg`, `/public/going-home.mp3`).
