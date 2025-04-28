@@ -1,6 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/button"
 
 interface NavbarProps {
   bgColor?: string
@@ -30,25 +30,25 @@ export default function Navbar({
             <Image src="/logo.png" alt="Logo" width={40} height={40} className="mr-2" />
           </Link>
           <Link
-            href="/navbar-routes/somans-story"
+            href="/navbar-pages/somans-story"
             className={linkClass("somans-story")}
           >
             Soman's Story
           </Link>
           <Link
-            href="/navbar-routes/legend-unfolds"
+            href="/navbar-pages/legend-unfolds"
             className={linkClass("legend-unfolds")}
           >
             Legend Unfolds
           </Link>
           <Link
-            href="/navbar-routes/heroes-villains"
+            href="/navbar-pages/heroes-villains"
             className={linkClass("heroes-villains")}
           >
             Heroes & Villains
           </Link>
         </div>
-        <Link href="/navbar-routes/test-your-fate">
+        <Link href="/navbar-pages/test-your-fate">
           <Button
             variant="outline"
             className="text-[#253544] border-[#253544] rounded-full text-sm bg-white font-bold"

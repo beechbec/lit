@@ -1,9 +1,7 @@
 import type React from "react"
-import { Playfair_Display } from "next/font/google"
+import { raleway } from "./fonts"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-
-const playfair = Playfair_Display({ subsets: ["latin"] })
 
 export const metadata = {
   title: "The School for Good and Evil",
@@ -17,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${playfair.className} min-h-screen bg-cream`}>
+      <body className={`${raleway.variable} min-h-screen bg-cream`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
           <main>{children}</main>
         </ThemeProvider>

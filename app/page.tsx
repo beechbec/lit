@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/button"
 import Navbar from "@/components/navbar"
 
 export default function Home() {
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/navbar-routes/test-your-fate">
+            <Link href="/navbar-pages/test-your-fate">
               <Button className="bg-slate-800 text-white hover:bg-slate-700">Test your Fate</Button>
             </Link>
           </div>

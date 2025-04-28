@@ -56,6 +56,7 @@
 body {
   background-color: hsl(var(--cream));
   color: hsl(var(--foreground));
+  font-family: var(--font-raleway), sans-serif;
 }
 
 @layer base {
