@@ -13,12 +13,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  // console.log("raleway.variable", raleway.variable);
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en">
       <body className={`${raleway.variable} min-h-screen bg-cream`}>
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+        {/* <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}> */}
           <main>{children}</main>
-        </ThemeProvider>
+        {/* </ThemeProvider> */}
       </body>
     </html>
   )
