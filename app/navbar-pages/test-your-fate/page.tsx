@@ -7,7 +7,7 @@ export default function TestYourFate() {
   return (
     <div className="min-h-screen bg-cream">
       <div className="absolute top-6 left-0 right-0 z-20">
-        <Navbar />
+        <Navbar bgColor="#253544" textColor="white" />
       </div>
 
       {/* Hero Section */}
@@ -25,27 +25,48 @@ export default function TestYourFate() {
                 </p>
 
                 <div className="space-y-6">
-                  <div className="transition-transform duration-300 hover:translate-x-1">
-                    <h3 className="font-bold text-lg mb-1">10 Magical Questions</h3>
-                    <p className="text-sm text-gray-600">Answer honestly to reveal your true nature</p>
+                  {/* 10 Magical Questions */}
+                  <div className="flex items-start gap-4 transition-transform duration-300 hover:translate-x-1">
+                    <img src="/10-magical-questions.png" alt="10 Magical Questions" className="w-15 h-10 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-lg mb-1 text-[#253544]">
+                        10 Magical Questions
+                      </h3>
+                      <p className="text-sm text-gray-500">Answer thoughtfully to reveal your true nature</p>
+                    </div>
                   </div>
 
-                  <div className="transition-transform duration-300 hover:translate-x-1">
-                    <h3 className="font-bold text-lg mb-1">Spread the Magic</h3>
-                    <p className="text-sm text-gray-600">
-                      Share your results and challenge your friends to discover their own fate
-                    </p>
+                  {/* Character Match*/}
+                  <div className="flex items-start gap-4 transition-transform duration-300 hover:translate-x-1">
+                    <img src="/character-match.png" alt="Spread the Magic" className="w-15 h-10 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-lg mb-1 text-[#253544]">
+                      Character Match
+                      </h3>
+                      <p className="text-sm text-gray-500">
+                      Discover which character from the movie shares your spirit
+                      </p>
+                    </div>
                   </div>
 
-                  <div className="transition-transform duration-300 hover:translate-x-1">
-                    <h3 className="font-bold text-lg mb-1">Challenge Your Fate</h3>
-                    <p className="text-sm text-gray-600">
+                  {/* Challenge Your Fate */}
+                  <div className="flex items-start gap-4 transition-transform duration-300 hover:translate-x-1">
+                    <img src="/challenge-your-fate.png" alt="Challenge Your Fate" className="w-15 h-10 mt-1" />
+                    <div>
+                      <h3 className="font-bold text-lg mb-1 text-[#253544]">
+                        Challenge Your Fate
+                      </h3>
+                      <p className="text-sm text-gray-500">
                       Retake the quiz if you dare—will your destiny change or remain the same?
-                    </p>
+                      </p>
+                    </div>
                   </div>
-
+                </div>
+                <div className="flex justify-center mt-8">
                   <Link href="/navbar-pages/test-your-fate/quiz">
-                    <Button className="bg-amber-700 hover:bg-amber-800 text-white rounded-full">Take the Quiz</Button>
+                    <Button className="bg-amber-700 hover:bg-amber-800 text-white rounded-full px-10 py-3 text-lg font-bold shadow-md">
+                      Take the Quiz
+                    </Button>
                   </Link>
                 </div>
               </div>
@@ -53,7 +74,7 @@ export default function TestYourFate() {
 
             <div className="hidden md:block">
               <div className="relative aspect-square rounded-lg overflow-hidden transition-transform duration-300 hover:scale-[1.02]">
-                <Image src="https://i.imgur.com/JZcIDSP.jpg" alt="Test Your Fate" fill className="object-cover" />
+                <Image src="/test-your-fate.png" alt="Test Your Fate" fill className="object-cover" />
               </div>
             </div>
           </div>

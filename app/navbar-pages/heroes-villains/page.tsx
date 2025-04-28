@@ -7,7 +7,7 @@ export default function HeroesVillains() {
   return (
     <div className="min-h-screen bg-cream">
       <div className="absolute top-6 left-0 right-0 z-20">
-        <Navbar />
+      <Navbar bgColor="#253544" textColor="white" />
       </div>
 
       <div className="max-w-6xl mx-auto py-24 px-12">
