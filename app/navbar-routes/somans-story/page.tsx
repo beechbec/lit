@@ -6,7 +6,7 @@ export default function SomansStory() {
   return (
     <div className="min-h-screen bg-cream">
       <div className="absolute top-6 left-0 right-0 z-20">
-        <Navbar />
+        <Navbar bgColor="#253544" textColor="white" />
       </div>
 
       <div className="max-w-6xl mx-auto py-24 px-12">
@@ -39,8 +39,8 @@ export default function SomansStory() {
           </div>
 
           <div>
-            <div className="relative aspect-square overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.02]">
-              <Image src="https://i.imgur.com/JZcIDSP.jpg" alt="Soman Chainani" fill className="object-cover" />
+            <div className="relative aspect-square overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.02] flex items-center justify-center">
+              <Image src="/soman.png" alt="Soman Chainani" fill className="object-contain" />
             </div>
           </div>
         </div>
@@ -53,25 +53,69 @@ export default function SomansStory() {
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {[1, 2, 3, 4].map((book) => (
-              <div
-                key={book}
-                className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]"
-              >
-                <div className="relative aspect-[2/3] overflow-hidden">
-                  <Image
-                    src={`https://i.imgur.com/Yd7bZAM.jpg`}
-                    alt={`Book ${book}`}
-                    fill
-                    className="object-cover transition-transform duration-500 hover:scale-105"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="font-bold mb-1 text-sm">Book {book}</h3>
-                  <p className="text-xs text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-                </div>
+            {/* Book 1 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book1.png"
+                  alt="The School for Good and Evil"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
               </div>
-            ))}
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">The School for Good and Evil</h3>
+                <p className="text-xs text-gray-600">The first novel in the epic series that started it all</p>
+              </div>
+            </div>
+
+            {/* Book 2 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book2.png"
+                  alt="A World Without Princes"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">A World Without Princes</h3>
+                <p className="text-xs text-gray-600">The second novel in the New York Times bestselling series</p>
+              </div>
+            </div>
+
+            {/* Book 3 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book3.png"
+                  alt="The Last Ever After"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">The Last Ever After</h3>
+                <p className="text-xs text-gray-600">The thrilling conclusion to the original trilogy</p>
+              </div>
+            </div>
+
+            {/* Book 4 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book4.png"
+                  alt="Quests for Glory"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">Quests for Glory</h3>
+                <p className="text-xs text-gray-600">The fourth novel that begins an exciting new saga</p>
+              </div>
+            </div>
           </div>
         </section>
       </div>

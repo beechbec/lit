@@ -64,7 +64,7 @@ export default function Results() {
         </div>
 
         <div className="flex flex-col space-y-3">
-          <Link href="/test-your-fate/quiz">
+          <Link href="/navbar-routes/test-your-fate/quiz">
             <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-slate-900">
               Take the Quiz Again
             </Button>

@@ -2,26 +2,48 @@ import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 
-export default function Navbar() {
+interface NavbarProps {
+  bgColor?: string
+  textColor?: string
+  activePage?: string // e.g. "somans-story"
+}
+
+export default function Navbar({
+  bgColor = "#CEB59599",
+  textColor = "white",
+  activePage = "",
+}: NavbarProps) {
+  // Helper for active link styling
+  const linkClass = (page: string) =>
+    `transition-colors text-sm hidden sm:inline-block px-2 ${
+      activePage === page ? "font-bold text-white" : ""
+    }`
+
   return (
-    <nav className="w-full bg-slate-900 text-white py-3 px-6 rounded-full max-w-[95%] mx-auto">
+    <nav
+      className="w-full py-3 px-6 rounded-full max-w-[95%] mx-auto"
+      style={{ background: bgColor, color: textColor }}
+    >
       <div className="flex justify-between items-center">
         <div className="flex items-center space-x-6">
           <Link href="/" className="flex items-center">
             <Image src="/logo.png" alt="Logo" width={40} height={40} className="mr-2" />
           </Link>
-          <Link href="/navbar-routes/somans-story" className="hover:text-amber-300 transition-colors text-sm hidden sm:inline-block">
+          <Link
+            href="/navbar-routes/somans-story"
+            className={linkClass("somans-story")}
+          >
             Soman's Story
           </Link>
           <Link
             href="/navbar-routes/legend-unfolds"
-            className="hover:text-amber-300 transition-colors text-sm hidden sm:inline-block"
+            className={linkClass("legend-unfolds")}
           >
             Legend Unfolds
           </Link>
           <Link
             href="/navbar-routes/heroes-villains"
-            className="hover:text-amber-300 transition-colors text-sm hidden sm:inline-block"
+            className={linkClass("heroes-villains")}
           >
             Heroes & Villains
           </Link>
@@ -29,7 +51,7 @@ export default function Navbar() {
         <Link href="/navbar-routes/test-your-fate">
           <Button
             variant="outline"
-            className="text-white border-white hover:bg-white hover:text-slate-900 rounded-full text-sm"
+            className="text-[#253544] border-[#253544] rounded-full text-sm bg-white font-bold"
           >
             Test your Fate
           </Button>

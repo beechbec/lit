@@ -148,7 +148,7 @@ export default function Quiz() {
     } else {
       // Calculate result
       const result = calculateResult(newAnswers)
-      router.push(`/test-your-fate/results?type=${result}`)
+      router.push(`/navbar-routes/test-your-fate/results?type=${result}`)
     }
   }
 

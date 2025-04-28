@@ -23,18 +23,23 @@ export default function Home() {
         <div className="relative z-10 max-w-2xl mb-16">
           <p className="uppercase tracking-wider mb-2 text-sm">DISCOVER YOUR TRUE NATURE AND FIND OUT</p>
           <p className="uppercase tracking-wider mb-2 text-sm">WHERE YOU TRULY BELONG</p>
-          <h1 className="text-5xl md:text-6xl font-bold mb-2">Destiny Awaits:</h1>
+          <h1 className="text-5xl md:text-6xl font-extrabold mb-2">Destiny Awaits:</h1>
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Are you Good or Evil?</h2>
         </div>
 
         {/* Sidebar Card */}
         <div className="absolute right-12 top-1/3 z-10 bg-white rounded-lg overflow-hidden shadow-lg w-64 hidden md:block">
+          <div className="w-full h-32 relative">
+            <Image
+              src="/step-into-a-world.png"
+              alt="Step into a world"
+              fill
+              className="object-cover w-full h-full rounded-t-lg"
+              priority
+            />
+          </div>
           <div className="p-4">
-            <div className="flex items-center mb-2">
-              <Image src="/logo.png" alt="Logo" width={30} height={30} className="mr-2" />
-              <h3 className="font-bold text-gray-800">Step into a world</h3>
-            </div>
-            <p className="text-sm text-gray-600 mb-3">where fairy tales aren't just stories</p>
+            <h3 className="font-bold text-gray-800 mb-2">Step into a world where fairy tales aren't just stories</h3>
             <Link href="#unlock-section">
               <Button className="w-full bg-slate-800 text-white hover:bg-slate-700 text-xs">UNLOCK THE TALE</Button>
             </Link>
@@ -91,7 +96,7 @@ export default function Home() {
           </div>
 
           <div className="text-center mt-12">
-            <Link href="/test-your-fate">
+            <Link href="/navbar-routes/test-your-fate">
               <Button className="bg-slate-800 text-white hover:bg-slate-700">Test your Fate</Button>
             </Link>
           </div>
