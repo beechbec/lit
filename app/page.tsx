@@ -1,3 +1,4 @@
+"use client"
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/button"
@@ -40,9 +41,17 @@ export default function Home() {
           </div>
           <div className="p-4">
             <h3 className="font-bold text-gray-800 mb-2">Step into a world where fairy tales aren't just stories</h3>
-            <Link href="#unlock-section">
-              <Button className="w-full bg-slate-800 text-white hover:bg-slate-700 text-xs">UNLOCK THE TALE</Button>
-            </Link>
+            <Button
+              className="w-full bg-slate-800 text-white hover:bg-slate-700 text-xs"
+              onClick={() => {
+                const section = document.getElementById('unlock-section');
+                if (section) {
+                  section.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              UNLOCK THE TALE
+            </Button>
           </div>
         </div>
       </section>
