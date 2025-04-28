@@ -24,13 +24,13 @@ function ResultsContent() {
     <div
       className="min-h-screen flex items-center justify-center p-4"
       style={{
-        backgroundImage: "url('https://i.imgur.com/JZcIDSP.jpg')",
+        backgroundImage: "url('/results-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <div className="absolute top-6 left-0 right-0 z-20">
-        <Navbar />
+        <Navbar bgColor="#253544" textColor="white" />
       </div>
 
       <div className="max-w-md w-full bg-slate-900/90 text-white p-8 rounded-lg text-center">
@@ -67,7 +67,7 @@ function ResultsContent() {
 
         <div className="flex flex-col space-y-3">
           <Link href="/navbar-pages/test-your-fate/quiz">
-            <Button variant="outline" className="w-full border-white text-white hover:bg-white hover:text-slate-900">
+            <Button variant="outline" className="w-full border-white bg-white text-slate-900">
               Take the Quiz Again
             </Button>
           </Link>
