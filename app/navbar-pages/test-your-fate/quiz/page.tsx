@@ -174,37 +174,37 @@ export default function Quiz() {
     <div
       className="min-h-screen flex flex-col items-center justify-center p-4"
       style={{
-        backgroundImage: "url('https://i.imgur.com/JZcIDSP.jpg')",
+        backgroundImage: "url('/fate-quiz-bg.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
       <div className="absolute top-6 left-0 right-0 z-20">
-        <Navbar />
+        <Navbar bgColor="#253544" textColor="white" />
+      </div>
+
+      <div className="max-w-3xl w-full flex flex-col items-center mb-8">
+        <h1 className="text-3xl font-extrabold mb-2 text-white">Discover Your School</h1>
+        <p className="text-gray-300 font-normal">
+          Question {currentQuestion + 1} out of {questions.length}
+        </p>
+        <div className="progress-bar mt-4 w-full">
+          <div className="progress-fill" style={{ width: `${progress}%` }}></div>
+        </div>
       </div>
 
       <div className="max-w-3xl w-full bg-slate-900/90 text-white p-8 rounded-lg">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-2">Discover Your School</h1>
-          <p className="text-gray-300">
-            Question {currentQuestion + 1} out of {questions.length}
-          </p>
-          <div className="progress-bar mt-4">
-            <div className="progress-fill" style={{ width: `${progress}%` }}></div>
-          </div>
-        </div>
-
         <div className="mb-8">
-          <h2 className="text-xl mb-6">{question.question}</h2>
+          <h2 className="text-xl mb-6 font-semibold">{question.question}</h2>
 
           <RadioGroup value={selectedOption} onValueChange={handleOptionSelect} className="space-y-4">
             {question.options.map((option) => (
               <div key={option.id} className="flex items-center">
-                <RadioGroupItem id={option.id} value={option.id} className="border-white" />
                 <Label
                   htmlFor={option.id}
-                  className="ml-2 text-white cursor-pointer py-2 px-4 rounded-md w-full hover:bg-slate-800"
+                  className="flex items-center w-full ml-0 text-white cursor-pointer py-2 px-4 rounded-md hover:bg-slate-800 font-medium"
                 >
+                  <RadioGroupItem id={option.id} value={option.id} className="border-white mr-3" />
                   {option.text}
                 </Label>
               </div>

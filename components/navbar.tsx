@@ -5,7 +5,7 @@ import { Button } from "@/components/button"
 interface NavbarProps {
   bgColor?: string
   textColor?: string
-  activePage?: string // e.g. "somans-story"
+  activePage?: string
 }
 
 export default function Navbar({
@@ -33,25 +33,25 @@ export default function Navbar({
             href="/navbar-pages/somans-story"
             className={linkClass("somans-story")}
           >
-            Soman's Story
+            <span className="font-extrabold">Soman's Story</span>
           </Link>
           <Link
             href="/navbar-pages/legend-unfolds"
             className={linkClass("legend-unfolds")}
           >
-            Legend Unfolds
+            <span className="font-extrabold">Legend Unfolds</span>
           </Link>
           <Link
             href="/navbar-pages/heroes-villains"
             className={linkClass("heroes-villains")}
           >
-            Heroes & Villains
+            <span className="font-extrabold">Heroes & Villains</span>
           </Link>
         </div>
         <Link href="/navbar-pages/test-your-fate">
           <Button
             variant="outline"
-            className="text-[#253544] border-[#253544] rounded-full text-sm bg-white font-bold"
+            className="text-[#253544] border-[#253544] rounded-full text-sm bg-white font-extrabold"
           >
             Test your Fate
           </Button>
