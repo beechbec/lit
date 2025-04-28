@@ -13,24 +13,26 @@ export default function LegendUnfolds() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white pt-[64px]">
+    <div
+      className="min-h-screen text-white pt-[64px]"
+      style={{
+        backgroundImage: "url('/legend-unfolds.png')",
+        backgroundSize: "100%",
+        backgroundPosition: "center top",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="absolute top-6 left-0 right-0 z-20">
         <Navbar />
       </div>
 
       {/* Hero Section */}
-      <section
-        className="relative flex flex-col items-center justify-center text-center text-white py-32 px-4 min-h-[70vh]"
-        style={{
-          backgroundImage: "url('/legend-unfolds.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      <section className="relative flex flex-col items-center justify-center text-center text-white py-48 px-4 min-h-[70vh]">
         <div className="absolute inset-0 bg-black/50" />
         <div className="container relative z-10">
           <p className="uppercase tracking-wider mb-2 text-sm">
-            The line between good and evil isn't always clear—even in fairy tales
+          “The difference between a villain and a hero isn't 
+          their actions. It's their reasons.”
           </p>
           <h1 className="text-4xl md:text-5xl font-bold mb-8">What if your destiny wasn't chosen by you?</h1>
           <Button
