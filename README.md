@@ -1,15 +1,4 @@
-# The School for Good and Evil - Interactive Website
-
-This is an interactive web experience inspired by "The School for Good and Evil." Built with Next.js, it features quizzes, character pages, and immersive visuals and audio.
-
-## Features
-- **Landing Page:** Hero section, intro, and navigation to all main features.
-- **Quiz:** Test your fate with a 10-question quiz to discover if you belong to the School for Good or Evil. Includes background music and a mute/unmute button.
-- **Results:** See your school and key traits, with themed visuals and music.
-- **Soman's Story:** Learn about the author and his featured works.
-- **Legend Unfolds:** Explore the story themes and book highlights.
-- **Heroes & Villains:** Browse characters from both schools.
-- **Responsive Design:** Optimized for laptop and desktop screens.
+# The School for Good and Evil
 
 ## Routing / Pages
 - `/` — Home/Landing page
@@ -49,6 +38,3 @@ This is an interactive web experience inspired by "The School for Good and Evil.
 - [Next.js](https://nextjs.org/) (App Router)
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-
----
-Feel free to explore, customize, and expand the magical world!
