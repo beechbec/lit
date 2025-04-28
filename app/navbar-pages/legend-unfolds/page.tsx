@@ -13,7 +13,7 @@ export default function LegendUnfolds() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-900 text-white">
+    <div className="min-h-screen bg-slate-900 text-white pt-[64px]">
       <div className="absolute top-6 left-0 right-0 z-20">
         <Navbar />
       </div>
@@ -28,7 +28,7 @@ export default function LegendUnfolds() {
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 max-w-4xl mx-auto">
+        <div className="container relative z-10">
           <p className="uppercase tracking-wider mb-2 text-sm">
             The line between good and evil isn't always clear—even in fairy tales
           </p>
@@ -44,7 +44,7 @@ export default function LegendUnfolds() {
 
       {/* Features Section */}
       <section className="py-12 px-4 bg-cream text-slate-900">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="container grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-center transition-transform duration-300 hover:translate-y-[-5px]">
             <div className="flex justify-center mb-4">
               <Image src="/friendship-identity.png" alt="Friendship & Identity" width={60} height={60} />
@@ -73,7 +73,7 @@ export default function LegendUnfolds() {
 
       {/* Book Section */}
       <section ref={bookSectionRef} className="py-12 px-4 bg-cream text-slate-900">
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+        <div className="container grid md:grid-cols-3 gap-8">
           <div className="relative transition-transform duration-300 hover:scale-[1.02]">
             <Image
               src="/book1.png"

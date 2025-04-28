@@ -21,44 +21,46 @@ export default function Home() {
           <Navbar />
         </div>
 
-        <div className="relative z-10 max-w-2xl mb-16">
-          <p className="uppercase tracking-wider mb-2 text-sm">DISCOVER YOUR TRUE NATURE AND FIND OUT</p>
-          <p className="uppercase tracking-wider mb-2 text-sm">WHERE YOU TRULY BELONG</p>
-          <h1 className="text-5xl md:text-6xl font-extrabold mb-2">Destiny Awaits:</h1>
-          <h2 className="text-4xl md:text-5xl font-bold mb-8">Are you Good or Evil?</h2>
-        </div>
-
-        {/* Sidebar Card */}
-        <div className="absolute right-12 top-1/3 z-10 bg-white rounded-lg overflow-hidden shadow-lg w-64 hidden md:block">
-          <div className="w-full h-32 relative">
-            <Image
-              src="/step-into-a-world.png"
-              alt="Step into a world"
-              fill
-              className="object-cover w-full h-full rounded-t-lg"
-              priority
-            />
+        <div className="container relative z-10">
+          <div className="max-w-2xl mb-16">
+            <p className="uppercase tracking-wider mb-2 text-sm">DISCOVER YOUR TRUE NATURE AND FIND OUT</p>
+            <p className="uppercase tracking-wider mb-2 text-sm">WHERE YOU TRULY BELONG</p>
+            <h1 className="text-5xl md:text-6xl font-extrabold mb-2">Destiny Awaits:</h1>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Are you Good or Evil?</h2>
           </div>
-          <div className="p-4">
-            <h3 className="font-bold text-gray-800 mb-2">Step into a world where fairy tales aren't just stories</h3>
-            <Button
-              className="w-full bg-slate-800 text-white hover:bg-slate-700 text-xs"
-              onClick={() => {
-                const section = document.getElementById('unlock-section');
-                if (section) {
-                  section.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              UNLOCK THE TALE
-            </Button>
+
+          {/* Sidebar Card */}
+          <div className="absolute right-12 top-1/3 z-10 bg-white rounded-lg overflow-hidden shadow-lg w-64 hidden md:block">
+            <div className="w-full h-32 relative">
+              <Image
+                src="/step-into-a-world.png"
+                alt="Step into a world"
+                fill
+                className="object-cover w-full h-full rounded-t-lg"
+                priority
+              />
+            </div>
+            <div className="p-4">
+              <h3 className="font-bold text-gray-800 mb-2">Step into a world where fairy tales aren't just stories</h3>
+              <Button
+                className="w-full bg-slate-800 text-white hover:bg-slate-700 text-xs"
+                onClick={() => {
+                  const section = document.getElementById('unlock-section');
+                  if (section) {
+                    section.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+              >
+                UNLOCK THE TALE
+              </Button>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Unlock The Tale Section */}
       <section id="unlock-section" className="py-16 px-12 bg-cream">
-        <div className="max-w-6xl mx-auto">
+        <div className="container">
           <h2 className="text-3xl font-bold text-center text-amber-800 mb-6">UNLOCK THE TALE</h2>
           <p className="text-center max-w-3xl mx-auto mb-12 text-gray-600">
             Two schools. One destiny. Will you follow the path of honor and heroism, or embrace the darkness of power

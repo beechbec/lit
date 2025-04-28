@@ -100,3 +100,22 @@ body {
   background-color: white;
   transition: width 0.3s ease;
 }
+
+/* Responsive Breakpoints */
+@media screen and (min-width: 1920px) {
+  /* Desktop styles */
+  .container {
+    max-width: 1800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1919px) {
+  /* Laptop styles */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+}

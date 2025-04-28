@@ -5,12 +5,12 @@ import Navbar from "@/components/navbar"
 
 export default function HeroesVillains() {
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream pt-[150px]">
       <div className="absolute top-6 left-0 right-0 z-20">
       <Navbar bgColor="#253544" textColor="white" />
       </div>
 
-      <div className="max-w-6xl mx-auto py-24 px-12">
+      <div className="container py-24 px-12">
         <h1 className="text-3xl font-bold mb-8">Heroes & Villains</h1>
 
         <Tabs defaultValue="good" className="w-full">

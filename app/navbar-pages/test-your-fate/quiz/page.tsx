@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef, useEffect } from "react"
 import { useRouter } from "next/navigation"
 import { Button } from "@/components/button"
 import { RadioGroup, RadioGroupItem } from "@/components/radio-group"
@@ -128,6 +128,15 @@ export default function Quiz() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [selectedOption, setSelectedOption] = useState("")
   const [answers, setAnswers] = useState<string[]>([])
+  const [muted, setMuted] = useState(false)
+  const audioRef = useRef<HTMLAudioElement>(null)
+
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.muted = false;
+      audioRef.current.volume = 1;
+    }
+  }, []);
 
   const handleOptionSelect = (value: string) => {
     setSelectedOption(value)
@@ -167,6 +176,21 @@ export default function Quiz() {
     return goodCount > evilCount ? "good" : "evil"
   }
 
+  const handleMuteToggle = () => {
+    setMuted((prev) => {
+      const newMuted = !prev
+      if (audioRef.current) {
+        audioRef.current.muted = newMuted
+        if (!newMuted) {
+          // Try to play audio if unmuting
+          audioRef.current.play().catch((e) => console.log('Autoplay blocked, will play on next interaction', e));
+        }
+      }
+      console.log('Mute toggled:', newMuted)
+      return newMuted
+    })
+  }
+
   const question = questions[currentQuestion]
   const progress = ((currentQuestion + 1) / questions.length) * 100
 
@@ -179,6 +203,22 @@ export default function Quiz() {
         backgroundPosition: "center",
       }}
     >
+      <audio ref={audioRef} src="/going-home.mp3" autoPlay loop hidden />
+      <button
+        onClick={handleMuteToggle}
+        className="fixed bottom-6 right-6 z-50 bg-white/80 hover:bg-white text-slate-900 rounded-full shadow-lg p-3 flex items-center justify-center transition w-12 h-12"
+        aria-label={muted ? "Unmute music" : "Mute music"}
+        style={{ position: 'fixed', bottom: '1.5rem', right: '1.5rem' }}
+      >
+        <span className="relative w-7 h-7 flex items-center justify-center">
+          <img src="/music-note.svg" alt="Music Icon" className="w-7 h-7 object-contain" />
+          {muted && (
+            <svg className="absolute inset-0 w-7 h-7 pointer-events-none" viewBox="0 0 28 28">
+              <line x1="4" y1="24" x2="24" y2="4" stroke="red" strokeWidth="3" strokeLinecap="round" />
+            </svg>
+          )}
+        </span>
+      </button>
       <div className="absolute top-6 left-0 right-0 z-20">
         <Navbar bgColor="#253544" textColor="white" />
       </div>
