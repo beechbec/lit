@@ -15,12 +15,12 @@
 - After installing Node.js, you will have access to the `npm` command.
 
 ## Setup & Development
-1. **Clone the repository:**
+1. **Clone the repository: SKIP TO STEP 3 WHEN DONE ONCE**
    ```bash
    git clone <your-repo-url>
    cd <your-repo-directory>
    ```
-2. **Install dependencies:**
+2. **Install dependencies: SKIP TO STEP 3 WHEN DONE ONCE**
    ```bash
    npm install
    ```
