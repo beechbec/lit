@@ -3,9 +3,9 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/button"
+import { Button } from "@/lit/components/button";
 import Navbar from "@/components/navbar"
-import { SchoolModal, type SchoolType } from "../components/school-modal"
+
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false)
   const [selectedSchool, setSelectedSchool] = useState<SchoolType>(null)
@@ -55,9 +55,9 @@ export default function Home() {
               <Button
                 className="w-full bg-slate-800 text-white hover:bg-slate-700 text-xs"
                 onClick={() => {
-                  const section = document.getElementById('unlock-section');
+                  const section = document.getElementById("unlock-section")
                   if (section) {
-                    section.scrollIntoView({ behavior: 'smooth' });
+                    section.scrollIntoView({ behavior: "smooth" })
                   }
                 }}
               >
@@ -79,10 +79,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* School of Evil */}
-            <div 
-              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px] cursor-pointer"
-              onClick={() => openSchoolModal("evil")}
-            >
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px]">
               <div className="h-64 relative">
                 <Image
                   src="/school-evil.png"
@@ -96,23 +93,11 @@ export default function Home() {
                 <p className="text-gray-700 mb-4">
                   In a world that fears the wicked, only the most cunning will prove that villains deserve a story too.
                 </p>
-                <Button 
-                  className="bg-slate-800 text-white hover:bg-slate-700 w-full"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openSchoolModal("evil");
-                  }}
-                >
-                  Learn More
-                </Button>
               </div>
             </div>
 
             {/* School of Good */}
-            <div 
-              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px] cursor-pointer"
-              onClick={() => openSchoolModal("good")}
-            >
+            <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px]">
               <div className="h-64 relative">
                 <Image
                   src="/school-good.png"
@@ -127,15 +112,6 @@ export default function Home() {
                   A place of beauty, grace, and heroism, where noble souls train to become fairy tale princes,
                   princesses, and legendary heroes.
                 </p>
-                <Button 
-                  className="bg-slate-800 text-white hover:bg-slate-700 w-full"
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    openSchoolModal("good");
-                  }}
-                >
-                  Learn More
-                </Button>
               </div>
             </div>
           </div>
