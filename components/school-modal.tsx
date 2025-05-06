@@ -1,6 +1,6 @@
 "use client"
 import Image from "next/image"
-import { Button } from "@/lit/components/button";
+import { Button } from "@/lit/components/button"
 import {
   Dialog,
   DialogContent,
@@ -10,7 +10,8 @@ import {
   DialogClose,
 } from "@/components/ui/dialog"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion"
+
 export type SchoolType = "good" | "evil" | null
 
 interface CoursesByGender {
@@ -40,7 +41,7 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
     name: "School of Good",
     tagline: "The School of Heroes, Light, and Virtue",
     description:
-      "The School for Good is where all the bright, pure-hearted heroes are trained. It's a place of elegance, kindness, and selflessness, where students learn to wield their beauty, charm, and courage to bring light into the world. It's a magical institution set in a breathtakingly beautiful campus filled with fairytale-like architecture, lush gardens, and sparkling lakes.",
+      "The School for Good is where all the bright, pure-hearted heroes are trained. It's a place of elegance, kindness, and selflessness, where students learn to wield their beauty, charm, and courage to bring light into the world.",
     imageSrc: "/school-good.png",
     courses: {
       boys: [
@@ -87,50 +88,40 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
       {
         title: "Year One",
         courses: [
-          "Beautification: Taught by Professor Emma Anemone, focusing on enhancing inner and outer beauty.",
-          "Princess Etiquette: Instructed by Pollux, covering royal manners and diplomacy.",
-          "Swordplay and Weapons Training: Led by Professor Rumi Espada, teaching combat skills.",
-          "Animal Communication: Taught by Princess Uma, focusing on understanding and interacting with animals.",
-          "Chivalry and Grooming: Instructed by Professor Aleksander Lukas, emphasizing honor and personal care.",
-          "Physical Education (P.E.): Conducted by Albemarle the Woodpecker, promoting physical fitness.",
-          "History of Heroes: Taught by Professor Hort of Bloodbrook, exploring legendary heroes.",
-          "Good Deeds: Led by Dean Clarissa Dovey, focusing on acts of kindness and charity.",
-          "Surviving Fairy Tales: Conducted by Yuba the Gnome, teaching students how to navigate and survive in fairytale scenarios.",
+          "Beautification: Enhancing inner and outer beauty",
+          "Princess Etiquette: Royal manners and diplomacy",
+          "Swordplay and Weapons Training: Combat skills",
+          "Animal Communication: Understanding and interacting with animals",
+          "Chivalry and Grooming: Honor and personal care",
         ],
       },
       {
         title: "Year Two",
         courses: [
-          "Advanced Beautification: Further studies in enhancing beauty and grace.",
-          "Advanced Swordplay: In-depth combat training.",
-          "Animal Communication: Advanced techniques in understanding animals.",
-          "Good Deeds: Continued focus on performing acts of kindness.",
-          "Surviving Fairy Tales: Advanced survival skills in fairytale environments.",
+          "Advanced Beautification: Further studies in beauty and grace",
+          "Advanced Swordplay: In-depth combat training",
+          "Animal Communication: Advanced techniques",
+          "Good Deeds: Acts of kindness",
+          "Surviving Fairy Tales: Survival skills",
         ],
       },
       {
         title: "Year Three",
         courses: [
-          "Beautification/Grooming: Express for Success - Professor Emma Anemone",
-          "Beautification/Grooming: Advanced Strength Training - Professor Aleksander Lukas",
-          "Beautification/Grooming: Radiance Retreat - Professor Anemone and Professor Lukas",
-          "Dance Workshop: Waltz and Rondel - Pollux",
-          "Dance Workshop: Interpretive Movement - Pollux",
-          "Animal Communication: Study Abroad - Princess Uma",
-          "Animal Communication: Mogriff Grooming and Training - Princess Uma",
-          "Good Deeds: Sidekick Training - Prof. Dean Clarissa Dovey",
-          "Good Deeds: Lead the Way - Prof. Dean Clarissa Dovey",
-          "History Seminar: History of War - Professor Hort of Bloodbrook",
-          "Surviving Fairy Tales: Various Forest Group Leaders (mixed with Nevers)",
+          "Express for Success: Advanced grooming",
+          "Advanced Strength Training: Physical conditioning",
+          "Dance Workshop: Waltz and interpretive movement",
+          "Animal Communication: Study abroad",
+          "Good Deeds: Sidekick training",
         ],
       },
       {
         title: "Year Four (quests)",
         courses: [
-          "Journeying to Drupathi: Rescuing the imprisoned Princess of Maidenvale",
-          "Civil Audit of Camelot: After reports of corruption amongst the advisory council",
-          "Writing and Publishing a Biography: Of the Sader family (Good and Evil students with a focus on history)",
-          "Opening a Trade Outpost: In Merlin's newly discovered kingdoms beyond the Shazabah desert",
+          "Rescuing the imprisoned Princess of Maidenvale",
+          "Civil Audit of Camelot",
+          "Writing and Publishing a Biography",
+          "Opening a Trade Outpost",
         ],
       },
     ],
@@ -139,7 +130,7 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
     name: "School of Evil",
     tagline: "The School of Villains, Shadows, and Ambition",
     description:
-      "The School for Evil is where dark forces are nurtured and villainous traits are honed. Students are trained to be cunning, manipulative, and ambitious, with a focus on using dark magic, charm, and wits to seize power and control. The school is set in a dark, ominous castle with towering spires and a dark enchanted forest surrounding it. It's a place for those who aren't afraid to do whatever it takes to get ahead.",
+      "The School for Evil is where dark forces are nurtured and villainous traits are honed. Students are trained to be cunning, manipulative, and ambitious, with a focus on using dark magic, charm, and wits to seize power and control.",
     imageSrc: "/school-evil.png",
     courses: {
       boys: [
@@ -160,7 +151,7 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
       ],
     },
     anthem:
-      "From shadows deep, we rise to reign,\nWith cunning minds and hearts of bane.\nThe darkness calls, we heed its cry,\nAs villains born to terrify.\nFor Evil's path is ours to tread,\nWhere legends dark are forged and bred.",
+      "From shadows deep, we rise to reign,\nWith cunning minds and hearts of bane.\nThe darkness calls, we heed its cry,\nAs villains born to terrify.",
     alumni: [
       { name: "Captain Hook", description: "The infamous pirate from Neverland." },
       { name: "The Evil Queen", description: "Master of vanity and poison from Snow White's tale." },
@@ -184,45 +175,36 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
       {
         title: "Year One",
         courses: [
-          "Evil 101 - Uglification: Taught by Professor Manley, focusing on the art of disguise and transformation.",
-          "Evil 102 - Henchmen Training: Instructed by Castor, preparing students to serve as loyal subordinates.",
-          "Evil 103 - Curses & Death Traps: Led by Dean Sophie, teaching the creation of curses and traps.",
-          "Evil 104 - History of Villainy: Taught by Professor Hort, exploring the history of villains.",
-          "Evil 105 - Special Talents: Instructed by Professor Sheeks, focusing on unique abilities.",
-          "Evil 106 - Surviving Fairy Tales: Conducted by various Forest Group leaders, teaching survival tactics in fairytale environments.",
+          "Uglification: The art of disguise and transformation",
+          "Henchmen Training: Preparing loyal subordinates",
+          "Curses & Death Traps: Creating effective traps",
+          "History of Villainy: Studying infamous villains",
+          "Special Talents: Developing unique abilities",
         ],
       },
       {
         title: "Year Two",
         courses: [
-          "Evil 201 - Uglification: Disguises & Deformity: Advanced lessons in transformation techniques.",
-          "Evil 202 - Henchmen: Field Training: Practical training for henchmen roles.",
-          "Evil 203 - Advanced Curses & Death Traps: In-depth study of complex curses and traps.",
-          "Evil 204 - History of Fairy Tales: Exploration of fairy tale origins and evolution.",
-          "Evil 205 - Advanced Spell Casting: Mastery of spell casting techniques.",
-          "Evil 206 - Surviving Fairy Tales: Continued survival training in fairytale scenarios.",
+          "Disguises & Deformity: Advanced transformation",
+          "Henchmen Field Training: Practical training",
+          "Advanced Curses: Complex curse creation",
+          "History of Fairy Tales: Understanding origins",
+          "Advanced Spell Casting: Mastery of spells",
         ],
       },
       {
         title: "Year Three",
         courses: [
-          "Evil 301 - Uglification Seminar: Mimicry: Study of mimicry and impersonation.",
-          "Evil 302 - Uglification: Leader 'Looks': Creating leader-like appearances.",
-          "Evil 303 - Uglification Seminar: Henchmen 'Looks': Designing henchmen appearances.",
-          "Evil 304 - Independent Study: Sidekick Challenge Organizer: Organizing challenges for sidekicks.",
-          "Evil 305 - Curses & Death Traps: Nemesis Dream Analysis: Analyzing dreams to understand nemeses.",
-          "Evil 306 - Curses & Death Traps: Phantom Duels: Practicing duels with phantom adversaries.",
-          "Evil 307 - History Seminar: History of War: Studying the history of warfare.",
-          "Evil 308 - Ever Kingdoms: Pillaging & Pilfering: Learning the arts of plundering and stealing.",
-          "Evil 309 - Advanced Spell Casting: Flying: Mastery of flying spells.",
-          "Evil 310 - Surviving Fairy Tales: Final survival training in fairytale environments.",
+          "Mimicry: Study of impersonation",
+          "Leader 'Looks': Creating intimidating appearances",
+          "Nemesis Dream Analysis: Understanding enemies",
+          "Phantom Duels: Practice combat",
+          "Pillaging & Pilfering: The art of theft",
         ],
       },
       {
         title: "Year Four",
-        courses: [
-          "Students are divided into groups to embark on quests in the Endless Woods, returning at the end of the year for their graduation ceremony.",
-        ],
+        courses: ["Students embark on quests in the Endless Woods, returning for graduation at year's end."],
       },
     ],
   },
@@ -231,7 +213,7 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
 const foundersInfo = {
   title: "The Founders",
   description:
-    "The school was founded by Rafal and Rhian, twin brothers with opposing views of morality. After a bitter divide, Rafal became the embodiment of Evil, while Rhian represented Good. Their conflict laid the foundation for the split into two schools. The Storian, a magical quill that writes fairy tales as they unfold, is said to be the true force that records and governs the fate of the students.",
+    "The school was founded by Rafal and Rhian, twin brothers with opposing views of morality. After a bitter divide, Rafal became the embodiment of Evil, while Rhian represented Good.",
 }
 
 export function SchoolModal({
@@ -248,32 +230,33 @@ export function SchoolModal({
   const school = schoolData[schoolType]
   const accentColor = schoolType === "good" ? "#e9d5ff" : "#475569"
   const textColor = schoolType === "good" ? "#7e22ce" : "#1e293b"
+  const bgColor = schoolType === "good" ? "bg-purple-50" : "bg-slate-50"
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0">
-        <div className="sticky top-0 z-10 bg-white dark:bg-gray-950 border-b p-6 pb-4">
+        <div className="sticky top-0 z-10 bg-white dark:bg-gray-950 border-b p-4">
           <DialogHeader>
-            <DialogTitle className="text-3xl font-bold flex items-center gap-2">
-              <div className="w-6 h-6 rounded-full" style={{ backgroundColor: accentColor }} />
+            <DialogTitle className="text-2xl font-bold flex items-center gap-2">
+              <div className="w-4 h-4 rounded-full" style={{ backgroundColor: accentColor }} />
               {school.name}
             </DialogTitle>
-            <DialogDescription className="text-base mt-2">{school.tagline}</DialogDescription>
+            <DialogDescription className="text-sm mt-1">{school.tagline}</DialogDescription>
           </DialogHeader>
         </div>
 
-        <div className="relative h-64 w-full overflow-hidden">
+        <div className="relative h-56 w-full overflow-hidden">
           <Image src={school.imageSrc || "/placeholder.svg"} alt={school.name} fill className="object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
-            <div className="p-6 text-white max-w-3xl">
-              <p className="text-lg">{school.description}</p>
+            <div className="p-4 text-white max-w-3xl">
+              <p className="text-sm">{school.description}</p>
             </div>
           </div>
         </div>
 
-        <div className="p-6">
+        <div className="p-4">
           <Tabs defaultValue="about" className="w-full">
-            <TabsList className="grid w-full grid-cols-5">
+            <TabsList className="grid w-full grid-cols-5 mb-4">
               <TabsTrigger value="about">About</TabsTrigger>
               <TabsTrigger value="courses">Courses</TabsTrigger>
               <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
@@ -281,62 +264,60 @@ export function SchoolModal({
               <TabsTrigger value="alumni">Alumni</TabsTrigger>
             </TabsList>
 
-            <TabsContent value="about" className="space-y-6 pt-4">
-              <div className="bg-muted/50 rounded-lg p-4 border">
-                <h3 className="font-bold text-lg mb-2">About the School for Good and Evil</h3>
-                <p className="text-muted-foreground mb-4">
+            <TabsContent value="about" className="space-y-4">
+              <div className={`rounded-lg p-4 border ${bgColor}`}>
+                <h3 className="font-bold text-base mb-2">About the School</h3>
+                <p className="text-sm text-muted-foreground mb-3">
                   The School for Good and Evil is a magical institution where ordinary children are trained to become
-                  the heroes and villains of future fairy tales. Hidden deep within the Endless Woods, the school is
-                  divided into two towers.
+                  the heroes and villains of future fairy tales.
                 </p>
-                <div className="bg-white dark:bg-gray-900 rounded-md p-4 border">
-                  <h4 className="font-semibold mb-2">{foundersInfo.title}</h4>
-                  <p>{foundersInfo.description}</p>
+                <div className="bg-white dark:bg-gray-900 rounded-md p-3 border">
+                  <h4 className="font-semibold text-sm mb-1">{foundersInfo.title}</h4>
+                  <p className="text-xs text-muted-foreground">{foundersInfo.description}</p>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-bold text-lg mb-2">School Anthem</h3>
+                <h3 className="font-bold text-base mb-2">School Anthem</h3>
                 <div
-                  className="bg-muted p-6 rounded-md whitespace-pre-line border-l-4 text-center italic"
-                  style={{ borderColor: accentColor }}>
-                  <div>{school.anthem}</div>
+                  className="bg-muted p-4 rounded-md whitespace-pre-line text-center italic text-sm border-l-4"
+                  style={{ borderColor: accentColor }}
+                >
+                  {school.anthem}
                 </div>
               </div>
             </TabsContent>
 
-            <TabsContent value="courses" className="pt-4">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <h3 className="font-bold text-lg flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: accentColor }} />
+            <TabsContent value="courses">
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-3">
+                  <h3 className="font-bold text-base flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: accentColor }} />
                     Boys' Courses
                   </h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1">
                     {school.courses.boys.map((course, index) => (
                       <li
                         key={index}
-                        className="p-3 rounded-md border flex items-center gap-2 hover:bg-muted transition-colors"
+                        className="p-2 rounded-md border text-sm flex items-center gap-2 hover:bg-muted transition-colors"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
                         {course}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="space-y-4">
-                  <h3 className="font-bold text-lg flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: accentColor }} />
+                <div className="space-y-3">
+                  <h3 className="font-bold text-base flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: accentColor }} />
                     Girls' Courses
                   </h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1">
                     {school.courses.girls.map((course, index) => (
                       <li
                         key={index}
-                        className="p-3 rounded-md border flex items-center gap-2 hover:bg-muted transition-colors"
+                        className="p-2 rounded-md border text-sm flex items-center gap-2 hover:bg-muted transition-colors"
                       >
-                        <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: accentColor }} />
                         {course}
                       </li>
                     ))}
@@ -345,24 +326,24 @@ export function SchoolModal({
               </div>
             </TabsContent>
 
-            <TabsContent value="curriculum" className="pt-4">
+            <TabsContent value="curriculum">
               <Accordion>
                 {school.curriculum.map((year, index) => (
-                  <AccordionItem key={index}>
+                  <AccordionItem key={index} data-value={`year-${index}`}>
                     <AccordionTrigger>
-                      <div className="hover:bg-muted/50 px-4 rounded-md font-bold" style={{ color: textColor }}>
+                      <div className="font-bold text-sm" style={{ color: textColor }}>
                         {year.title}
                       </div>
                     </AccordionTrigger>
                     <AccordionContent>
-                      <ul className="space-y-2 py-2">
+                      <ul className="space-y-1 py-1 pl-2">
                         {year.courses.map((course, courseIndex) => (
                           <li
                             key={courseIndex}
-                            className="p-3 rounded-md bg-muted/30 flex items-start gap-2 hover:bg-muted transition-colors"
+                            className="p-2 rounded-md text-xs flex items-start gap-2 hover:bg-muted/30 transition-colors"
                           >
                             <div
-                              className="w-2 h-2 mt-1.5 rounded-full flex-shrink-0"
+                              className="w-1.5 h-1.5 mt-1 rounded-full flex-shrink-0"
                               style={{ backgroundColor: accentColor }}
                             />
                             <span>{course}</span>
@@ -375,29 +356,29 @@ export function SchoolModal({
               </Accordion>
             </TabsContent>
 
-            <TabsContent value="traditions" className="pt-4">
-              <div className="grid gap-4">
+            <TabsContent value="traditions">
+              <div className="grid gap-3">
                 {school.traditions.map((tradition, index) => (
                   <div
                     key={index}
-                    className="p-4 border rounded-lg hover:bg-muted/50 transition-colors"
-                    style={{ borderLeftWidth: "4px", borderLeftColor: accentColor }}
+                    className="p-3 border rounded-lg hover:bg-muted/20 transition-colors"
+                    style={{ borderLeftWidth: "3px", borderLeftColor: accentColor }}
                   >
-                    <h3 className="font-bold text-lg mb-1">{tradition.name}</h3>
-                    <p className="text-muted-foreground">{tradition.description}</p>
+                    <h3 className="font-bold text-sm mb-1">{tradition.name}</h3>
+                    <p className="text-xs text-muted-foreground">{tradition.description}</p>
                   </div>
                 ))}
               </div>
             </TabsContent>
 
-            <TabsContent value="alumni" className="pt-4">
-              <div className="grid md:grid-cols-3 gap-4">
+            <TabsContent value="alumni">
+              <div className="grid md:grid-cols-3 gap-3">
                 {school.alumni.map((alum, index) => (
-                  <div key={index} className="border p-4 rounded-lg hover:bg-muted/50 transition-colors flex flex-col">
-                    <h4 className="font-bold text-lg" style={{ color: textColor }}>
+                  <div key={index} className="border p-3 rounded-lg hover:bg-muted/20 transition-colors">
+                    <h4 className="font-bold text-sm" style={{ color: textColor }}>
                       {alum.name}
                     </h4>
-                    <p className="text-muted-foreground flex-grow">{alum.description}</p>
+                    <p className="text-xs text-muted-foreground mt-1">{alum.description}</p>
                   </div>
                 ))}
               </div>
@@ -405,9 +386,9 @@ export function SchoolModal({
           </Tabs>
         </div>
 
-        <div className="sticky bottom-0 w-full bg-white dark:bg-gray-950 border-t p-4 flex justify-end">
+        <div className="sticky bottom-0 w-full bg-white dark:bg-gray-950 border-t p-3 flex justify-end">
           <DialogClose asChild>
-            <Button>Close</Button>
+            <Button size="sm">Close</Button>
           </DialogClose>
         </div>
       </DialogContent>

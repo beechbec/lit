@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Button } from "@/components/button"
 import Navbar from "@/components/navbar"
+import Link from "next/link"
 
 export default function SomansStory() {
   return (
@@ -17,23 +18,33 @@ export default function SomansStory() {
 
             <div className="space-y-4 mb-8">
               <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur.
+                Soman Chainani is the New York Times bestselling author of The School for Good and Evil series. The
+                series has sold over 3.5 million copies, been translated into 30 languages, and has been adapted into a
+                major motion picture from Netflix, which debuted at #1 in 2022.
               </p>
               <p className="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                dolore magna aliqua.
+                A graduate of Harvard University and Columbia University's MFA Film Program, Soman began his career as a
+                screenwriter and director. His films have played at over 150 film festivals around the world, and his
+                writing awards include honors from Big Bear Lake, the CAPE Foundation, and the Sun Valley Writers'
+                Fellowship.
+              </p>
+              <p className="text-sm text-gray-600">
+                In 2023, Soman launched BEASTS & BEAUTY: DANGEROUS TALES, a New York Times bestselling collection of
+                dangerous fairy tales, and in 2024, he released FALL OF THE SCHOOL FOR GOOD AND EVIL, the first book in
+                a brand new trilogy.
               </p>
             </div>
 
             <div className="flex space-x-4">
-              <Button variant="default" className="bg-amber-700 hover:bg-amber-800 text-xs">
-                Follow on Instagram
+              <Button variant="default" className="bg-amber-700 hover:bg-amber-800 text-xs" asChild>
+                <Link href="https://www.instagram.com/somanc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+                  Follow on Instagram
+                </Link>
               </Button>
-              <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-50 text-xs">
-                Official Website
+              <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-50 text-xs" asChild>
+                <Link href="https://www.somanchainani.com/" target="_blank" rel="noopener noreferrer">
+                  Official Website
+                </Link>
               </Button>
             </div>
           </div>
@@ -52,12 +63,28 @@ export default function SomansStory() {
             Step into the magical worlds of Soman Chainani—where fairy tales are rewritten and destinies are challenged.
           </p>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {/* Book 1 */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
+            {/* Book 1 - Prequel */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
               <div className="relative aspect-[2/3] overflow-hidden">
                 <Image
                   src="/book1.png"
+                  alt="Rise of the School for Good and Evil"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">Rise of the School for Good and Evil</h3>
+                <p className="text-xs text-gray-600">The prequel to the beloved series</p>
+              </div>
+            </div>
+
+            {/* Book 2 - First Book */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book2.jpg"
                   alt="The School for Good and Evil"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
@@ -69,11 +96,11 @@ export default function SomansStory() {
               </div>
             </div>
 
-            {/* Book 2 */}
+            {/* Book 3 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
               <div className="relative aspect-[2/3] overflow-hidden">
                 <Image
-                  src="/book2.png"
+                  src="/book3.png"
                   alt="A World Without Princes"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
@@ -85,11 +112,11 @@ export default function SomansStory() {
               </div>
             </div>
 
-            {/* Book 3 */}
+            {/* Book 4 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
               <div className="relative aspect-[2/3] overflow-hidden">
                 <Image
-                  src="/book3.png"
+                  src="/book4.png"
                   alt="The Last Ever After"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
@@ -101,11 +128,11 @@ export default function SomansStory() {
               </div>
             </div>
 
-            {/* Book 4 */}
+            {/* Book 5 */}
             <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
               <div className="relative aspect-[2/3] overflow-hidden">
                 <Image
-                  src="/book4.png"
+                  src="/book5.jpg"
                   alt="Quests for Glory"
                   fill
                   className="object-cover transition-transform duration-500 hover:scale-105"
@@ -114,6 +141,70 @@ export default function SomansStory() {
               <div className="p-4">
                 <h3 className="font-bold mb-1 text-sm">Quests for Glory</h3>
                 <p className="text-xs text-gray-600">The fourth novel that begins an exciting new saga</p>
+              </div>
+            </div>
+
+            {/* Book 6 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book6.webp"
+                  alt="A Crystal of Time"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">A Crystal of Time</h3>
+                <p className="text-xs text-gray-600">The fifth novel in the School for Good and Evil series</p>
+              </div>
+            </div>
+
+            {/* Book 7 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book7.jpg"
+                  alt="One True King"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">One True King</h3>
+                <p className="text-xs text-gray-600">The sixth and final book in the bestselling series</p>
+              </div>
+            </div>
+
+            {/* Book 8 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book8.png"
+                  alt="Fall of the School for Good and Evil"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">Fall of the School for Good and Evil</h3>
+                <p className="text-xs text-gray-600">The first book in a brand new trilogy</p>
+              </div>
+            </div>
+
+            {/* Book 9 */}
+            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
+              <div className="relative aspect-[2/3] overflow-hidden">
+                <Image
+                  src="/book9.avif"
+                  alt="Beasts and Beauty: Dangerous Tales"
+                  fill
+                  className="object-cover transition-transform duration-500 hover:scale-105"
+                />
+              </div>
+              <div className="p-4">
+                <h3 className="font-bold mb-1 text-sm">Beasts and Beauty: Dangerous Tales</h3>
+                <p className="text-xs text-gray-600">A collection of dangerous fairy tales</p>
               </div>
             </div>
           </div>
