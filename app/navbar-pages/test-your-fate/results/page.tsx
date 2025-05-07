@@ -9,7 +9,6 @@ import { Suspense, useRef, useState, useEffect } from "react"
 
 type ResultType = "good" | "evil"
 
-// Client component that uses useSearchParams
 function ResultsContent() {
   const searchParams = useSearchParams()
   const type = (searchParams.get("type") || "good") as ResultType
@@ -22,6 +21,8 @@ function ResultsContent() {
 
   const [muted, setMuted] = useState(false)
   const audioRef = useRef<HTMLAudioElement>(null)
+  
+  const musicSource = isGood ? "/Song for Good.mp3" : "/Song for Bad.mp3"
 
   useEffect(() => {
     if (audioRef.current) {
@@ -36,7 +37,6 @@ function ResultsContent() {
       if (audioRef.current) {
         audioRef.current.muted = newMuted
         if (!newMuted) {
-          // Try to play audio if unmuting
           audioRef.current.play().catch((e) => console.log('Autoplay blocked, will play on next interaction', e));
         }
       }
@@ -54,7 +54,7 @@ function ResultsContent() {
         backgroundPosition: "center",
       }}
     >
-      <audio ref={audioRef} src="/going-home.mp3" autoPlay loop hidden />
+      <audio ref={audioRef} src={musicSource} autoPlay loop hidden />
       <button
         onClick={handleMuteToggle}
         className="fixed bottom-6 right-6 z-50 bg-white/80 hover:bg-white text-slate-900 rounded-full shadow-lg p-3 flex items-center justify-center transition w-12 h-12"
@@ -62,7 +62,7 @@ function ResultsContent() {
         style={{ position: 'fixed', bottom: '1.5rem', right: '1.5rem' }}
       >
         <span className="relative w-7 h-7 flex items-center justify-center">
-          <img src="/music.png" alt="Music Icon" className="w-7 h-7 object-contain" />
+          <img src="/music-note.svg" alt="Music Icon" className="w-7 h-7 object-contain" />
           {muted && (
             <svg className="absolute inset-0 w-7 h-7 pointer-events-none" viewBox="0 0 28 28">
               <line x1="4" y1="24" x2="24" y2="4" stroke="red" strokeWidth="3" strokeLinecap="round" />
@@ -121,7 +121,6 @@ function ResultsContent() {
   )
 }
 
-// Main page component
 export default function Results() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
