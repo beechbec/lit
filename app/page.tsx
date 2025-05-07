@@ -3,8 +3,9 @@
 import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/lit/components/button";
+import { Button } from "@/components/button";
 import Navbar from "@/components/navbar"
+import { SchoolModal, SchoolType } from "@/components/school-modal"
 
 export default function Home() {
   const [modalOpen, setModalOpen] = useState(false)
@@ -79,7 +80,10 @@ export default function Home() {
 
           <div className="grid md:grid-cols-2 gap-8">
             {/* School of Evil */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px]">
+            <div 
+              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px] cursor-pointer"
+              onClick={() => openSchoolModal("evil")}
+            >
               <div className="h-64 relative">
                 <Image
                   src="/school-evil.png"
@@ -97,7 +101,10 @@ export default function Home() {
             </div>
 
             {/* School of Good */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px]">
+            <div 
+              className="bg-white rounded-lg overflow-hidden shadow-lg transition-transform duration-300 hover:translate-y-[-5px] cursor-pointer"
+              onClick={() => openSchoolModal("good")}
+            >
               <div className="h-64 relative">
                 <Image
                   src="/school-good.png"
