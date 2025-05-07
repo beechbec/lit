@@ -9,11 +9,32 @@ import { Suspense, useRef, useState, useEffect } from "react"
 
 type ResultType = "good" | "evil"
 
+function getFateResult(score: number) {
+  if (score >= 12 && score <= 16) {
+    return { alignment: "True Good", characters: ["Yuba", "Agatha"], color: "blue-400" };
+  } else if (score >= 8 && score <= 11) {
+    return { alignment: "Noble Good", characters: ["Professor Dovey", "Reena"], color: "blue-300" };
+  } else if (score >= 4 && score <= 7) {
+    return { alignment: "Light Good", characters: ["Kiko", "Beatrix"], color: "blue-200" };
+  } else if (score >= -3 && score <= 3) {
+    return { alignment: "Balanced Fate", characters: ["Hort", "Dot"], color: "yellow-400" };
+  } else if (score >= -7 && score <= -4) {
+    return { alignment: "Light Evil", characters: ["Anadil", "Hester"], color: "red-200" };
+  } else if (score >= -11 && score <= -8) {
+    return { alignment: "Noble Evil", characters: ["Lady Lesso", "Sophie"], color: "red-300" };
+  } else if (score >= -16 && score <= -12) {
+    return { alignment: "True Evil", characters: ["Rafal", "Aric"], color: "red-400" };
+  } else {
+    return { alignment: "Balanced Fate", characters: ["Hort", "Dot"], color: "yellow-400" };
+  }
+}
+
 function ResultsContent() {
   const searchParams = useSearchParams()
-  const type = (searchParams.get("type") || "good") as ResultType
+  const score = parseInt(searchParams.get("score") || "0", 10)
+  const fate = getFateResult(score)
 
-  const isGood = type === "good"
+  const isGood = fate.alignment.startsWith("True") || fate.alignment.startsWith("Noble")
 
   const traits = isGood
     ? ["Compassionate", "Honest", "Brave", "Selfless", "Loyal"]
@@ -78,32 +99,25 @@ function ResultsContent() {
         <h1 className="text-2xl font-bold mb-6">Your Results</h1>
 
         <div
-          className={`w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-105 ${isGood ? "bg-blue-700" : "bg-red-700"}`}
+          className={`w-24 h-24 rounded-full flex items-center justify-center mx-auto mb-6 transition-transform duration-300 hover:scale-105 bg-${fate.color}`}
         >
-          <span className="text-3xl font-bold">5</span>
+          <span className="text-3xl font-bold">{score}</span>
         </div>
 
-        <h2 className={`text-2xl font-bold mb-4 ${isGood ? "text-blue-400" : "text-red-400"}`}>
-          School of {isGood ? "Good" : "Evil"}
+        <h2 className={`text-2xl font-bold mb-2 text-${fate.color}`}>
+          {fate.alignment}
         </h2>
-
-        <p className="mb-8 text-gray-300 text-sm">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation
-          ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-
-        <div className="mb-8">
-          <h3 className="text-lg font-medium mb-4">Your Key Traits</h3>
-          <div className="flex flex-wrap justify-center gap-2">
-            {traits.map((trait, index) => (
-              <Badge
-                key={index}
-                className={`${isGood ? "bg-blue-600 hover:bg-blue-700" : "bg-red-600 hover:bg-red-700"}`}
-              >
-                {trait}
-              </Badge>
-            ))}
-          </div>
+        <h3 className="text-lg font-semibold mb-4">School of Evers Character(s):</h3>
+        <div className="flex flex-col items-center gap-2 mb-6">
+          {fate.characters.map((char) => (
+            <div key={char} className="flex flex-col items-center">
+              <div className="w-16 h-16 bg-gray-400 rounded-full mb-2 flex items-center justify-center">
+                {/* Placeholder for character image */}
+                <span className="text-white font-bold text-lg">IMG</span>
+              </div>
+              <span className="text-base font-medium">{char}</span>
+            </div>
+          ))}
         </div>
 
         <div className="flex flex-col space-y-3">

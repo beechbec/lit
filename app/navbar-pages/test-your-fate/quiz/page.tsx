@@ -11,6 +11,7 @@ type QuestionOption = {
   id: string
   text: string
   type: "good" | "evil" | "neutral"
+  score?: number
 }
 
 type Question = {
@@ -23,102 +24,102 @@ type Question = {
 const questions: Question[] = [
   {
     id: 1,
-    question: "Your friend is in trouble. What do you do?",
+    question: "A powerful relic falls into your hands. You can't safely guard it alone. What do you do?",
     options: [
-      { id: "a", text: "Rush to help without thinking of the consequences", type: "good" },
-      { id: "b", text: "Help only if there's something in it for you", type: "evil" },
-      { id: "c", text: "Analyze the situation before deciding to help", type: "neutral" },
-      { id: "d", text: "Pretend you didn't notice their trouble", type: "evil" },
+      { id: "a", text: "Use it to undo a great wrong—even if it means bending the rules", type: "good", score: 1 },
+      { id: "b", text: "Hand it over to the nearest authority without explanation", type: "good", score: 2 },
+      { id: "c", text: "Sell it off and use the money to pursue your own destiny", type: "evil", score: -1 },
+      { id: "d", text: "Shatter it forever so no one wields its power again", type: "evil", score: -2 },
     ],
   },
   {
     id: 2,
-    question: "You find a wallet full of money. What do you do?",
+    question: "A friend begs you to lie for them to avoid punishment. You know they've lied before.",
     options: [
-      { id: "a", text: "Return it to the owner without taking anything", type: "good" },
-      { id: "b", text: "Take the money and throw away the wallet", type: "evil" },
-      { id: "c", text: "Take a small reward and return the rest", type: "neutral" },
-      { id: "d", text: "Return it, but make sure everyone knows about your good deed", type: "neutral" },
+      { id: "a", text: "Lie to protect them anyway—they're loyal to you", type: "good", score: 1 },
+      { id: "b", text: "Encourage confession, offering to stand by them in court", type: "good", score: 2 },
+      { id: "c", text: "Refuse and let them face the consequences—rules are rules", type: "evil", score: -1 },
+      { id: "d", text: "Agree—but later leverage your favor for something you want", type: "evil", score: -2 },
     ],
   },
   {
     id: 3,
-    question: "What's your idea of power?",
+    question: "During a formal duel, your adversary yields.",
     options: [
-      { id: "a", text: "The ability to help others", type: "good" },
-      { id: "b", text: "Control over others", type: "evil" },
-      { id: "c", text: "Knowledge and wisdom", type: "neutral" },
-      { id: "d", text: "Fame and recognition", type: "neutral" },
+      { id: "a", text: "Accept and offer your hand in peace", type: "good", score: 2 },
+      { id: "b", text: "Declare it a draw—you had your chance", type: "good", score: 1 },
+      { id: "c", text: "Press the advantage: mercy invites weakness", type: "evil", score: -1 },
+      { id: "d", text: "Spare them—and tattoo a symbolic mark so they remember your mercy", type: "evil", score: -2 },
     ],
   },
   {
     id: 4,
-    question: "How do you handle conflict?",
+    question: "You overhear a classmate plotting sabotage that won't directly endanger lives but will ruin reputations.",
     options: [
-      { id: "a", text: "Try to find a peaceful resolution", type: "good" },
-      { id: "b", text: "Intimidate the other person into backing down", type: "evil" },
-      { id: "c", text: "Avoid it at all costs", type: "neutral" },
-      { id: "d", text: "Use your wit to outsmart the other person", type: "neutral" },
+      { id: "a", text: "Secretly thwart their plan using clever misdirection", type: "good", score: 2 },
+      { id: "b", text: "Confront them openly and appeal to their better nature", type: "good", score: 1 },
+      { id: "c", text: "Expose them ruthlessly—public shame is the only deterrent", type: "evil", score: -2 },
+      { id: "d", text: "Do nothing—they chose their path", type: "evil", score: -1 },
     ],
   },
   {
     id: 5,
-    question: "What's your greatest strength?",
+    question: "A magical teacher offers to grant you flawless skill in whatever you choose—but at the cost of losing one cherished memory.",
     options: [
-      { id: "a", text: "Compassion and empathy", type: "good" },
-      { id: "b", text: "Cunning and strategy", type: "evil" },
-      { id: "c", text: "Intelligence and problem-solving", type: "neutral" },
-      { id: "d", text: "Charisma and persuasion", type: "neutral" },
+      { id: "a", text: "Accept—great power demands sacrifice", type: "good", score: 1 },
+      { id: "b", text: "Decline—identity is worth more than skill", type: "good", score: 2 },
+      { id: "c", text: "Accept—memories are fading anyway", type: "evil", score: -1 },
+      { id: "d", text: "Bargain to erase someone else's memory instead", type: "evil", score: -2 },
     ],
   },
   {
     id: 6,
-    question: "What do you value most in friendship?",
+    question: "You can rescue one group: a caravan of innocent peasants or a small squad of elite knights sworn to your kingdom.",
     options: [
-      { id: "a", text: "Loyalty and trust", type: "good" },
-      { id: "b", text: "Usefulness and connections", type: "evil" },
-      { id: "c", text: "Shared interests and fun", type: "neutral" },
-      { id: "d", text: "Someone who makes you look good", type: "evil" },
+      { id: "a", text: "Save the peasants—every life matters equally", type: "good", score: 2 },
+      { id: "b", text: "Save the knights—they protect more people in the long run", type: "good", score: 1 },
+      { id: "c", text: "Let both suffer—your duty is to the realm, not individuals", type: "evil", score: -1 },
+      { id: "d", text: "Save the peasants, then recruit them as cannon fodder", type: "evil", score: -2 },
     ],
   },
   {
     id: 7,
-    question: "How do you feel about rules?",
+    question: "Caught in enemy territory, you find a wounded foe begging for help.",
     options: [
-      { id: "a", text: "They're necessary for a functioning society", type: "good" },
-      { id: "b", text: "They're made to be broken", type: "evil" },
-      { id: "c", text: "They're guidelines, not absolutes", type: "neutral" },
-      { id: "d", text: "They apply to others, not to me", type: "evil" },
+      { id: "a", text: "Tend their wounds and let them go", type: "good", score: 2 },
+      { id: "b", text: "Heal them in secret, then turn them in", type: "good", score: 1 },
+      { id: "c", text: "Finish them off—do no harm means no mercy", type: "evil", score: -1 },
+      { id: "d", text: "Heal them, then curse their blade so they can't fight again", type: "evil", score: -2 },
     ],
   },
   {
     id: 8,
-    question: "What's your approach to achieving goals?",
+    question: "Your mentor offers you a chance to ascend—if you betray someone you trust.",
     options: [
-      { id: "a", text: "Hard work and perseverance", type: "good" },
-      { id: "b", text: "Whatever it takes, even if others get hurt", type: "evil" },
-      { id: "c", text: "Smart planning and efficiency", type: "neutral" },
-      { id: "d", text: "Finding shortcuts and loopholes", type: "evil" },
+      { id: "a", text: "Refuse and remain loyal", type: "good", score: 2 },
+      { id: "b", text: "Agree, but warn your friend afterward", type: "good", score: 1 },
+      { id: "c", text: "Betray them without a second thought", type: "evil", score: -1 },
+      { id: "d", text: "Betray them, then frame them for a greater crime", type: "evil", score: -2 },
     ],
   },
   {
     id: 9,
-    question: "How do you handle secrets?",
+    question: "You discover a hidden passage in your school that leads to forbidden knowledge.",
     options: [
-      { id: "a", text: "Keep them confidential unless keeping them would cause harm", type: "good" },
-      { id: "b", text: "Use them as leverage when needed", type: "evil" },
-      { id: "c", text: "Share them only with trusted friends", type: "neutral" },
-      { id: "d", text: "Secrets are burdens - better to be open", type: "good" },
+      { id: "a", text: "Study it to better serve others", type: "good", score: 1 },
+      { id: "b", text: "Seal it off—such power is too dangerous", type: "good", score: 2 },
+      { id: "c", text: "Leak it to whoever pays you most", type: "evil", score: -2 },
+      { id: "d", text: "Use it to blackmail the administration", type: "evil", score: -1 },
     ],
   },
   {
     id: 10,
-    question: "What legacy do you want to leave behind?",
+    question: "A peer confesses they've broken a minor law to save someone's life. You must choose:",
     options: [
-      { id: "a", text: "That I made the world a better place", type: "good" },
-      { id: "b", text: "That my name was feared and respected", type: "evil" },
-      { id: "c", text: "That I lived life to the fullest", type: "neutral" },
-      { id: "d", text: "That I achieved greatness and recognition", type: "neutral" },
+      { id: "a", text: "Help them cover it up", type: "good", score: 1 },
+      { id: "b", text: "Turn them in but write a plea for mercy", type: "good", score: 2 },
+      { id: "c", text: "Remain silent—rules are rules", type: "evil", score: -1 },
+      { id: "d", text: "Expose them and demand they pay you a favor", type: "evil", score: -2 },
     ],
   },
 ]
@@ -156,24 +157,19 @@ export default function Quiz() {
       setSelectedOption("")
     } else {
       // Calculate result
-      const result = calculateResult(newAnswers)
-      router.push(`/navbar-pages/test-your-fate/results?type=${result}`)
+      const resultScore = calculateScore(newAnswers)
+      router.push(`/navbar-pages/test-your-fate/results?score=${resultScore}`)
     }
   }
 
-  const calculateResult = (answers: string[]) => {
-    let goodCount = 0
-    let evilCount = 0
-
+  const calculateScore = (answers: string[]) => {
+    let total = 0
     answers.forEach((answer, index) => {
       const question = questions[index]
       const selectedOption = question.options.find((opt) => opt.id === answer)
-
-      if (selectedOption?.type === "good") goodCount++
-      if (selectedOption?.type === "evil") evilCount++
+      if (selectedOption) total += selectedOption.score || 0
     })
-
-    return goodCount > evilCount ? "good" : "evil"
+    return total
   }
 
   const handleMuteToggle = () => {
