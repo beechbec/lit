@@ -192,7 +192,7 @@ export default function Quiz() {
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center p-4"
+      className="min-h-screen flex flex-col items-center justify-center p-4 pt-32"
       style={{
         backgroundImage: "url('/fate-quiz-bg.png')",
         backgroundSize: "cover",
@@ -219,7 +219,7 @@ export default function Quiz() {
         <Navbar bgColor="#253544" textColor="white" />
       </div>
 
-      <div className="max-w-3xl w-full flex flex-col items-center mb-8">
+      <div className="max-w-3xl w-full flex flex-col items-center mb-8 mt-8">
         <h1 className="text-3xl font-extrabold mb-2 text-white">Discover Your School</h1>
         <p className="text-gray-300 font-normal">
           Question {currentQuestion + 1} out of {questions.length}
