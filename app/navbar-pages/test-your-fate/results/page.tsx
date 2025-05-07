@@ -84,7 +84,7 @@ const characterImages: Record<string, string> = {
   "Kiko": "/character_placeholder.png",
   "Beatrix": "/Good_Beatrix.jpg",
   "Hort": "/Evil_Hort.jpg",
-  "Dot": "/Good_Agatha.jpg",
+  "Dot": "/character_placeholder.png",
   "Anadil": "/character_placeholder.png",
   "Hester": "/Evil_Hester.jpg",
   "Lady Lesso": "/Evil_ Lady Lesso.jpg",
@@ -192,7 +192,7 @@ function ResultsContent() {
             </div>
           ))}
         </div>
-        <h2 className={`text-3xl font-extrabold mb-2 mt-4 ${isGood ? 'text-blue-300' : 'text-red-300'}`}>{fate.school}</h2>
+        <h2 className={`text-3xl font-extrabold mb-2 mt-4 ${isGood ? 'text-blue-300' : 'text-red-300'}`}>{fate.alignment}</h2>
         <p className="mb-8 text-lg text-white/90 max-w-xl mx-auto">{fate.description}</p>
         <h3 className="text-xl font-semibold mb-4 mt-2">Your Key Traits</h3>
         <div className="flex flex-wrap justify-center gap-4 mb-8">
