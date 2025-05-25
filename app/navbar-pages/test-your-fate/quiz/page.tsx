@@ -10,7 +10,7 @@ import Navbar from "@/components/navbar"
 type QuestionOption = {
   id: string
   text: string
-  type: "good" | "evil" | "neutral"
+  type: "good" | "evil"
   score?: number
 }
 
@@ -130,6 +130,7 @@ export default function Quiz() {
   const [selectedOption, setSelectedOption] = useState("")
   const [answers, setAnswers] = useState<string[]>([])
   const [muted, setMuted] = useState(false)
+  const [questionScores, setQuestionScores] = useState<Record<number, number>>({})  // Keep this for score tracking
   const audioRef = useRef<HTMLAudioElement>(null)
 
   useEffect(() => {
@@ -140,6 +141,19 @@ export default function Quiz() {
   }, []);
 
   const handleOptionSelect = (value: string) => {
+    const question = questions[currentQuestion]
+    const selectedOpt = question.options.find((opt) => opt.id === value)
+    
+    if (selectedOpt) {
+      // Keep score tracking logic for final result
+      const previousScore = questionScores[currentQuestion] || 0
+      const newQuestionScores = {
+        ...questionScores,
+        [currentQuestion]: selectedOpt.score || 0
+      }
+      setQuestionScores(newQuestionScores)
+    }
+    
     setSelectedOption(value)
   }
 
@@ -156,20 +170,10 @@ export default function Quiz() {
       setCurrentQuestion(currentQuestion + 1)
       setSelectedOption("")
     } else {
-      // Calculate result
-      const resultScore = calculateScore(newAnswers)
-      router.push(`/navbar-pages/test-your-fate/results?score=${resultScore}`)
+      // Calculate result using the final questionScores
+      const finalScore = Object.values(questionScores).reduce((sum, score) => sum + score, 0)
+      router.push(`/navbar-pages/test-your-fate/results?score=${finalScore}`)
     }
-  }
-
-  const calculateScore = (answers: string[]) => {
-    let total = 0
-    answers.forEach((answer, index) => {
-      const question = questions[index]
-      const selectedOption = question.options.find((opt) => opt.id === answer)
-      if (selectedOption) total += selectedOption.score || 0
-    })
-    return total
   }
 
   const handleMuteToggle = () => {

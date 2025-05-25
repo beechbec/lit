@@ -40,14 +40,6 @@ const goodCharacters = [
   },
   {
     id: 5,
-    name: "School Master",
-    quote: "Good and Evil are two sides of the same story.",
-    description: "The enigmatic head of the School for Good and Evil, guiding students with wisdom and mystery.",
-    traits: ["Mysterious", "Wise"],
-    image: "/Good_SchoolMaster.jpg"
-  },
-  {
-    id: 6,
     name: "Professor Anemone",
     quote: "Elegance is a virtue.",
     description: "A beauty-obsessed teacher at the School for Good, Professor Anemone teaches the importance of grace, posture, and appearance. Though she seems superficial, she believes beauty reflects inner discipline and strength.",
@@ -55,7 +47,7 @@ const goodCharacters = [
     image: "/Good_Professor Anemone.jpg"
   },
   {
-    id: 7,
+    id: 6,
     name: "Yuba",
     quote: "True Good is born of choice.",
     description: "A magical gnome who teaches the boys at the School for Good.",
@@ -63,7 +55,7 @@ const goodCharacters = [
     image: "/character_placeholder.png"
   },
   {
-    id: 8,
+    id: 7,
     name: "Kiko",
     quote: "It's not always about looks.",
     description: "A sweet and friendly student at the School for Good, often helping others.",
@@ -71,7 +63,7 @@ const goodCharacters = [
     image: "/character_placeholder.png"
   },
   {
-    id: 9,
+    id: 8,
     name: "Reena",
     quote: "We're not all helpless princesses, you know.",
     description: "A feisty princess who believes in standing up for herself.",

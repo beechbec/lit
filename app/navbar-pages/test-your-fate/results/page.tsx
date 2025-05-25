@@ -31,23 +31,23 @@ function getFateResult(score: number) {
       characters: ["Kiko", "Beatrix"],
       color: "blue-200",
       school: "School of Good",
-      description: "🌞 You're a radiant presence, spreading joy and kindness, though you might sometimes focus on personal interests."
+      description: "🌞 You're a radiant presence, spreading joy and kindness. Though your light may shine softly at times, you still choose the path of Good."
     };
-  } else if (score >= -3 && score <= 3) {
+  } else if (score > 0 && score <= 7) {
     return {
-      alignment: "Balanced Fate",
+      alignment: "Light Good",
+      characters: ["Kiko", "Beatrix"],
+      color: "blue-200",
+      school: "School of Good",
+      description: "🌞 You're a radiant presence, spreading joy and kindness. Though your light may shine softly at times, you still choose the path of Good."
+    };
+  } else if (score >= -7 && score <= 0) {
+    return {
+      alignment: "Mischievous Evil",
       characters: ["Hort", "Dot"],
-      color: "yellow-400",
+      color: "red-400",
       school: "School of Evil",
-      description: "⚖️ You're a complex soul, balancing between good and evil, capable of both kindness and mischief."
-    };
-  } else if (score >= -7 && score <= -4) {
-    return {
-      alignment: "Light Evil",
-      characters: ["Anadil", "Hester"],
-      color: "red-200",
-      school: "School of Evil",
-      description: "🌩️ You're a mischievous force, leaning towards darkness but maintaining a sense of loyalty and friendship."
+      description: "😈 You belong to the School of Evil, though your wickedness is more mischievous than malicious. Like Dot with her chocolate spells or Hort with his awkward villainy, you have your own unique way of being bad!"
     };
   } else if (score >= -11 && score <= -8) {
     return {
@@ -57,21 +57,13 @@ function getFateResult(score: number) {
       school: "School of Evil",
       description: "🌪️ You're a cunning and ambitious character, using your intelligence and charm to pursue your goals."
     };
-  } else if (score >= -16 && score <= -12) {
+  } else {
     return {
       alignment: "True Evil",
       characters: ["Rafal", "Aric"],
       color: "red-400",
       school: "School of Evil",
       description: "🔥 You're a force of pure darkness, embracing cruelty and chaos with no remorse."
-    };
-  } else {
-    return {
-      alignment: "Balanced Fate",
-      characters: ["Hort", "Dot"],
-      color: "yellow-400",
-      school: "School of Evil",
-      description: "⚖️ You're a complex soul, balancing between good and evil, capable of both kindness and mischief."
     };
   }
 }
