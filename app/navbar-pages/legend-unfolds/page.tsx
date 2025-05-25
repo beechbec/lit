@@ -143,23 +143,23 @@ const books = [
     isbn: "978-0063267503",
     themes: "Good vs Evil",
   },
-  {
+   {
     id: 9,
-    title: "Beasts and Beauty: Dangerous Tales",
-    cover: "/book9.avif",
+    title: "The Ever Never Handbook",
+    cover: "/book9.jpg",
     author: "Soman Chainani",
-    quote: "The most beautiful stories hide the darkest secrets.",
+    quote: "Welcome back to the School for Good and Evil.",
     description: [
-      "You think you know these stories, don't you? You are wrong. You don't know them at all.",
-      "Twelve tales, twelve dangerous tales of mystery, magic, and rebellious hearts. Each twists like a spindle to reveal truths full of warning and triumph, truths that free hearts long kept tame, truths that explore life... and death.",
-      "A prince has a surprising awakening... A beauty fights like a beast... A boy refuses to become prey... A path to happiness is lost... then found again.",
+      "Soman Chainani’s bestselling series *The School for Good and Evil* returns with *The Ever Never Handbook*!",
+      "Explore the magical world with gorgeous full-color illustrations, quizzes, character profiles, and more. Dive deeper into the world of Good and Evil through the eyes of your favorite characters like Sophie, Agatha, and Tedros, as you uncover the secrets of the schools.",
+      "Learn the inner workings of the Schools for Good and Evil, and discover what makes these characters who they are—each destined for a unique journey."
     ],
-    published: "September 21, 2021",
-    pages: "336",
-    genre: "Fantasy, Fairy Tales",
-    isbn: "978-0062652638",
-    themes: "Beauty vs Inner Strength",
-  },
+    published: "July 12, 2016",
+    pages: "304",
+    genre: "Fantasy, Handbook",
+    isbn: "978-0062423051",
+    themes: "Friendship & Identity",
+},
 ]
 
 export default function LegendUnfolds() {
