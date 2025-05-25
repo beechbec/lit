@@ -157,7 +157,14 @@ function ResultsContent() {
   }
 
   return (
-    <div className="relative min-h-[calc(100vh-150px)] flex items-center justify-center p-4 pt-[120px]" style={{ backgroundImage: "url('/results-bg.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
+  <div
+    className="relative min-h-screen flex items-center justify-center p-4 pt-[120px]"
+    style={{
+      backgroundImage: "url('/results-bg.png')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}>
       <audio ref={audioRef} src={musicSource} loop preload="auto" />
       <button
         onClick={handleMuteToggle}
