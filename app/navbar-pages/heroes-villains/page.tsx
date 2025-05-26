@@ -182,7 +182,7 @@ export default function HeroesVillains() {
                 text-lg
               `}
             >
-              School for Bad
+              School for Evil
             </TabsTrigger>
           </TabsList>
 
