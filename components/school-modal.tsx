@@ -1,14 +1,7 @@
 "use client"
 import Image from "next/image"
 import { Button } from "@/components/button"
-import {
-  Dialog,
-  DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
-  DialogClose,
-} from "@/components/dialog"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogClose } from "@/components/dialog"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/tabs"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/accordion"
 
@@ -42,7 +35,7 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
     tagline: "The School of Heroes, Light, and Virtue",
     description:
       "The School for Good is where all the bright, pure-hearted heroes are trained. It's a place of elegance, kindness, and selflessness, where students learn to wield their beauty, charm, and courage to bring light into the world.",
-    imageSrc: "/school-good.png",
+    imageSrc: "/School for Good.jpg",
     courses: {
       boys: [
         "Chivalry and Grooming",
@@ -131,7 +124,7 @@ const schoolData: Record<Exclude<SchoolType, null>, SchoolInfo> = {
     tagline: "The School of Villains, Shadows, and Ambition",
     description:
       "The School for Evil is where dark forces are nurtured and villainous traits are honed. Students are trained to be cunning, manipulative, and ambitious, with a focus on using dark magic, charm, and wits to seize power and control.",
-    imageSrc: "/school-evil.png",
+    imageSrc: "/School for Evil.jpg",
     courses: {
       boys: [
         "Henchmen Training",
@@ -228,60 +221,184 @@ export function SchoolModal({
   if (!schoolType) return null
 
   const school = schoolData[schoolType]
-  const accentColor = schoolType === "good" ? "#e9d5ff" : "#475569"
-  const textColor = schoolType === "good" ? "#7e22ce" : "#1e293b"
-  const bgColor = schoolType === "good" ? "bg-purple-50" : "bg-slate-50"
+
+  // Enhanced color schemes
+  const colorScheme =
+    schoolType === "good"
+      ? {
+          primary: "#1e40af",
+          secondary: "#3b82f6",
+          accent: "#60a5fa",
+          light: "#dbeafe",
+          gradient: "from-white via-blue-50 to-sky-50",
+          textPrimary: "#1e3a8a",
+          textSecondary: "#1e40af",
+          border: "#93c5fd",
+          shadow: "shadow-blue-200/50",
+          glow: "shadow-lg shadow-blue-300/30",
+        }
+      : {
+          primary: "#000000",
+          secondary: "#dc2626",
+          accent: "#ef4444",
+          light: "#111827",
+          gradient: "from-gray-900 via-red-950 to-black",
+          textPrimary: "#ff6b6b",
+          textSecondary: "#dc2626",
+          border: "#374151",
+          shadow: "shadow-red-500/20",
+          glow: "shadow-lg shadow-red-400/30",
+        }
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto p-0">
-        <div className="sticky top-0 z-10 bg-white dark:bg-gray-950 border-b p-4">
+      <DialogContent
+        className={`max-w-4xl max-h-[90vh] overflow-y-auto p-0 border-2 ${
+          schoolType === "good" ? "bg-white text-gray-900" : "bg-gray-900 text-white"
+        }`}
+        style={{ borderColor: colorScheme.border }}
+      >
+        <div
+          className={`sticky top-0 z-10 bg-gradient-to-r ${colorScheme.gradient} border-b-2 p-4 ${colorScheme.shadow}`}
+          style={{ borderBottomColor: colorScheme.border }}
+        >
           <DialogHeader>
-            <DialogTitle className="text-2xl font-bold flex items-center gap-2">
-              <div className="w-4 h-4 rounded-full" style={{ backgroundColor: accentColor }} />
+            <DialogTitle
+              className="text-2xl font-bold flex items-center gap-3"
+              style={{ color: colorScheme.textPrimary }}
+            >
+              <div
+                className={`w-5 h-5 rounded-full ${colorScheme.glow}`}
+                style={{
+                  background: `linear-gradient(135deg, ${colorScheme.secondary}, ${colorScheme.accent})`,
+                  boxShadow: `0 0 15px ${colorScheme.secondary}40`,
+                }}
+              />
               {school.name}
             </DialogTitle>
-            <DialogDescription className="text-sm mt-1">{school.tagline}</DialogDescription>
+            <DialogDescription className="text-sm mt-1 font-medium" style={{ color: colorScheme.textSecondary }}>
+              {school.tagline}
+            </DialogDescription>
           </DialogHeader>
         </div>
 
         <div className="relative h-56 w-full overflow-hidden">
           <Image src={school.imageSrc || "/placeholder.svg"} alt={school.name} fill className="object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end">
+          <div
+            className="absolute inset-0 flex items-end"
+            style={{
+              background: `linear-gradient(to top, ${colorScheme.primary}90, ${colorScheme.secondary}40, transparent)`,
+            }}
+          >
             <div className="p-4 text-white max-w-3xl">
-              <p className="text-sm">{school.description}</p>
+              <p className="text-sm font-medium drop-shadow-lg">{school.description}</p>
             </div>
           </div>
         </div>
 
         <div className="p-4">
           <Tabs defaultValue="about" className="w-full">
-            <TabsList className="grid w-full grid-cols-5 mb-4">
-              <TabsTrigger value="about">About</TabsTrigger>
-              <TabsTrigger value="courses">Courses</TabsTrigger>
-              <TabsTrigger value="curriculum">Curriculum</TabsTrigger>
-              <TabsTrigger value="traditions">Traditions</TabsTrigger>
-              <TabsTrigger value="alumni">Alumni</TabsTrigger>
+            <TabsList
+              className={`grid w-full grid-cols-5 mb-4 bg-gradient-to-r ${colorScheme.gradient} border-2`}
+              style={{ borderColor: colorScheme.border }}
+            >
+              <TabsTrigger
+                value="about"
+                className={`${
+                  schoolType === "good"
+                    ? "data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-md"
+                    : "data-[state=active]:bg-gray-800 data-[state=active]:text-white data-[state=active]:shadow-md"
+                }`}
+                style={{ color: colorScheme.textPrimary }}
+              >
+                About
+              </TabsTrigger>
+              <TabsTrigger
+                value="courses"
+                className={`${
+                  schoolType === "good"
+                    ? "data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-md"
+                    : "data-[state=active]:bg-gray-800 data-[state=active]:text-white data-[state=active]:shadow-md"
+                }`}
+                style={{ color: colorScheme.textPrimary }}
+              >
+                Courses
+              </TabsTrigger>
+              <TabsTrigger
+                value="curriculum"
+                className={`${
+                  schoolType === "good"
+                    ? "data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-md"
+                    : "data-[state=active]:bg-gray-800 data-[state=active]:text-white data-[state=active]:shadow-md"
+                }`}
+                style={{ color: colorScheme.textPrimary }}
+              >
+                Curriculum
+              </TabsTrigger>
+              <TabsTrigger
+                value="traditions"
+                className={`${
+                  schoolType === "good"
+                    ? "data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-md"
+                    : "data-[state=active]:bg-gray-800 data-[state=active]:text-white data-[state=active]:shadow-md"
+                }`}
+                style={{ color: colorScheme.textPrimary }}
+              >
+                Traditions
+              </TabsTrigger>
+              <TabsTrigger
+                value="alumni"
+                className={`${
+                  schoolType === "good"
+                    ? "data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-md"
+                    : "data-[state=active]:bg-gray-800 data-[state=active]:text-white data-[state=active]:shadow-md"
+                }`}
+                style={{ color: colorScheme.textPrimary }}
+              >
+                Alumni
+              </TabsTrigger>
             </TabsList>
 
             <TabsContent value="about" className="space-y-4">
-              <div className={`rounded-lg p-4 border ${bgColor}`}>
-                <h3 className="font-bold text-base mb-2">About the School</h3>
-                <p className="text-sm text-muted-foreground mb-3">
+              <div
+                className={`rounded-xl p-6 border-2 bg-gradient-to-br ${colorScheme.gradient} ${colorScheme.shadow}`}
+                style={{ borderColor: colorScheme.border }}
+              >
+                <h3 className="font-bold text-lg mb-3" style={{ color: colorScheme.textPrimary }}>
+                  About the School
+                </h3>
+                <p
+                  className={`text-sm ${schoolType === "good" ? "text-gray-700" : "text-gray-300"} mb-4 leading-relaxed`}
+                >
                   The School for Good and Evil is a magical institution where ordinary children are trained to become
                   the heroes and villains of future fairy tales.
                 </p>
-                <div className="bg-white dark:bg-gray-900 rounded-md p-3 border">
-                  <h4 className="font-semibold text-sm mb-1">{foundersInfo.title}</h4>
-                  <p className="text-xs text-muted-foreground">{foundersInfo.description}</p>
+                <div
+                  className={`${
+                    schoolType === "good" ? "bg-blue-50/80" : "bg-gray-800/80"
+                  } backdrop-blur-sm rounded-lg p-4 border shadow-md`}
+                  style={{ borderColor: colorScheme.border }}
+                >
+                  <h4 className="font-semibold text-sm mb-2" style={{ color: colorScheme.textPrimary }}>
+                    {foundersInfo.title}
+                  </h4>
+                  <p className={`text-xs ${schoolType === "good" ? "text-gray-600" : "text-gray-400"} leading-relaxed`}>
+                    {foundersInfo.description}
+                  </p>
                 </div>
               </div>
 
               <div>
-                <h3 className="font-bold text-base mb-2">School Anthem</h3>
+                <h3 className="font-bold text-lg mb-3" style={{ color: colorScheme.textPrimary }}>
+                  School Anthem
+                </h3>
                 <div
-                  className="bg-muted p-4 rounded-md whitespace-pre-line text-center italic text-sm border-l-4"
-                  style={{ borderColor: accentColor }}
+                  className={`bg-gradient-to-r ${colorScheme.gradient} p-6 rounded-xl whitespace-pre-line text-center italic text-sm border-l-4 ${colorScheme.shadow}`}
+                  style={{
+                    borderColor: colorScheme.secondary,
+                    color: colorScheme.textPrimary,
+                    boxShadow: `inset 0 0 20px ${colorScheme.secondary}20`,
+                  }}
                 >
                   {school.anthem}
                 </div>
@@ -289,35 +406,57 @@ export function SchoolModal({
             </TabsContent>
 
             <TabsContent value="courses">
-              <div className="grid md:grid-cols-2 gap-4">
-                <div className="space-y-3">
-                  <h3 className="font-bold text-base flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: accentColor }} />
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <h3 className="font-bold text-lg flex items-center gap-3" style={{ color: colorScheme.textPrimary }}>
+                    <div
+                      className="w-3 h-3 rounded-full"
+                      style={{
+                        background: `linear-gradient(135deg, ${colorScheme.secondary}, ${colorScheme.accent})`,
+                        boxShadow: `0 0 10px ${colorScheme.secondary}60`,
+                      }}
+                    />
                     Boys' Courses
                   </h3>
-                  <ul className="space-y-1">
+                  <ul className="space-y-2">
                     {school.courses.boys.map((course, index) => (
                       <li
                         key={index}
-                        className="p-2 rounded-md border text-sm flex items-center gap-2 hover:bg-muted transition-colors"
+                        className={`p-3 rounded-lg border-2 text-sm flex items-center gap-3 hover:shadow-md transition-all duration-200 bg-gradient-to-r ${colorScheme.gradient}`}
+                        style={{ borderColor: colorScheme.border, color: colorScheme.textSecondary }}
                       >
+                        <div
+                          className="w-2 h-2 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: colorScheme.accent }}
+                        />
                         {course}
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="space-y-3">
-                  <h3 className="font-bold text-base flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: accentColor }} />
+                <div className="space-y-4">
+                  <h3 className="font-bold text-lg flex items-center gap-3" style={{ color: colorScheme.textPrimary }}>
+                    <div
+                      className="w-3 h-3 rounded-full"
+                      style={{
+                        background: `linear-gradient(135deg, ${colorScheme.secondary}, ${colorScheme.accent})`,
+                        boxShadow: `0 0 10px ${colorScheme.secondary}60`,
+                      }}
+                    />
                     Girls' Courses
                   </h3>
-                  <ul className="space-y-1">
+                  <ul className="space-y-2">
                     {school.courses.girls.map((course, index) => (
                       <li
                         key={index}
-                        className="p-2 rounded-md border text-sm flex items-center gap-2 hover:bg-muted transition-colors"
+                        className={`p-3 rounded-lg border-2 text-sm flex items-center gap-3 hover:shadow-md transition-all duration-200 bg-gradient-to-r ${colorScheme.gradient}`}
+                        style={{ borderColor: colorScheme.border, color: colorScheme.textSecondary }}
                       >
+                        <div
+                          className="w-2 h-2 rounded-full flex-shrink-0"
+                          style={{ backgroundColor: colorScheme.accent }}
+                        />
                         {course}
                       </li>
                     ))}
@@ -330,55 +469,93 @@ export function SchoolModal({
               <Accordion>
                 {school.curriculum.map((year, index) => (
                   <AccordionItem key={index} data-value={`year-${index}`}>
-                    <AccordionTrigger>
-                      <div className="font-bold text-sm" style={{ color: textColor }}>
-                        {year.title}
-                      </div>
-                    </AccordionTrigger>
-                    <AccordionContent>
-                      <ul className="space-y-1 py-1 pl-2">
-                        {year.courses.map((course, courseIndex) => (
-                          <li
-                            key={courseIndex}
-                            className="p-2 rounded-md text-xs flex items-start gap-2 hover:bg-muted/30 transition-colors"
+                    <div
+                      className={`border-2 rounded-lg mb-2 bg-gradient-to-r ${colorScheme.gradient}`}
+                      style={{ borderColor: colorScheme.border }}
+                    >
+                      <AccordionTrigger>
+                        <div className="px-4">
+                          <div
+                            className="font-bold text-base flex items-center gap-3"
+                            style={{ color: colorScheme.textPrimary }}
                           >
-                            <div
-                              className="w-1.5 h-1.5 mt-1 rounded-full flex-shrink-0"
-                              style={{ backgroundColor: accentColor }}
-                            />
-                            <span>{course}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </AccordionContent>
+                            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: colorScheme.secondary }} />
+                            {year.title}
+                          </div>
+                        </div>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ul className="space-y-2 py-2 px-4">
+                          {year.courses.map((course, courseIndex) => (
+                            <li
+                              key={courseIndex}
+                              className="p-3 rounded-md text-sm flex items-start gap-3 hover:bg-white/50 transition-all duration-200"
+                              style={{ color: colorScheme.textSecondary }}
+                            >
+                              <div
+                                className="w-2 h-2 mt-1 rounded-full flex-shrink-0"
+                                style={{ backgroundColor: colorScheme.accent }}
+                              />
+                              <span>{course}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </AccordionContent>
+                    </div>
                   </AccordionItem>
                 ))}
               </Accordion>
             </TabsContent>
 
             <TabsContent value="traditions">
-              <div className="grid gap-3">
+              <div className="grid gap-4">
                 {school.traditions.map((tradition, index) => (
                   <div
                     key={index}
-                    className="p-3 border rounded-lg hover:bg-muted/20 transition-colors"
-                    style={{ borderLeftWidth: "3px", borderLeftColor: accentColor }}
+                    className={`p-4 border-2 rounded-xl hover:shadow-lg transition-all duration-200 bg-gradient-to-r ${colorScheme.gradient}`}
+                    style={{
+                      borderLeftWidth: "6px",
+                      borderLeftColor: colorScheme.secondary,
+                      borderColor: colorScheme.border,
+                    }}
                   >
-                    <h3 className="font-bold text-sm mb-1">{tradition.name}</h3>
-                    <p className="text-xs text-muted-foreground">{tradition.description}</p>
+                    <h3
+                      className="font-bold text-base mb-2 flex items-center gap-2"
+                      style={{ color: colorScheme.textPrimary }}
+                    >
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colorScheme.accent }} />
+                      {tradition.name}
+                    </h3>
+                    <p
+                      className={`text-sm ${schoolType === "good" ? "text-gray-700" : "text-gray-700"} leading-relaxed`}
+                    >
+                      {tradition.description}
+                    </p>
                   </div>
                 ))}
               </div>
             </TabsContent>
 
             <TabsContent value="alumni">
-              <div className="grid md:grid-cols-3 gap-3">
+              <div className="grid md:grid-cols-3 gap-4">
                 {school.alumni.map((alum, index) => (
-                  <div key={index} className="border p-3 rounded-lg hover:bg-muted/20 transition-colors">
-                    <h4 className="font-bold text-sm" style={{ color: textColor }}>
+                  <div
+                    key={index}
+                    className={`border-2 p-4 rounded-xl hover:shadow-lg transition-all duration-200 bg-gradient-to-br ${colorScheme.gradient}`}
+                    style={{ borderColor: colorScheme.border }}
+                  >
+                    <h4
+                      className="font-bold text-base mb-2 flex items-center gap-2"
+                      style={{ color: colorScheme.textPrimary }}
+                    >
+                      <div className="w-2 h-2 rounded-full" style={{ backgroundColor: colorScheme.secondary }} />
                       {alum.name}
                     </h4>
-                    <p className="text-xs text-muted-foreground mt-1">{alum.description}</p>
+                    <p
+                      className={`text-sm ${schoolType === "good" ? "text-gray-700" : "text-gray-700"} leading-relaxed`}
+                    >
+                      {alum.description}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -386,9 +563,22 @@ export function SchoolModal({
           </Tabs>
         </div>
 
-        <div className="sticky bottom-0 w-full bg-white dark:bg-gray-950 border-t p-3 flex justify-end">
+        <div
+          className={`sticky bottom-0 w-full bg-gradient-to-r ${colorScheme.gradient} border-t-2 p-4 flex justify-end ${colorScheme.shadow}`}
+          style={{ borderTopColor: colorScheme.border }}
+        >
           <DialogClose asChild>
-            <Button size="sm">Close</Button>
+            <Button
+              size="sm"
+              className="font-semibold px-6 py-2 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+              style={{
+                backgroundColor: colorScheme.secondary,
+                color: "white",
+                border: `2px solid ${colorScheme.primary}`,
+              }}
+            >
+              Close
+            </Button>
           </DialogClose>
         </div>
       </DialogContent>

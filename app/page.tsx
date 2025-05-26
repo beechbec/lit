@@ -125,7 +125,9 @@ export default function Home() {
 
           <div className="text-center mt-12">
             <Link href="/navbar-pages/test-your-fate">
-              <Button className="bg-slate-800 text-white hover:bg-slate-700">Test your Fate</Button>
+<Button className="bg-slate-800 text-white hover:bg-slate-700 px-10 py-5 text-2xl font-bold rounded-2xl shadow-xl transition-transform duration-300 transform hover:scale-105">
+Test your Fate
+</Button>
             </Link>
           </div>
         </div>

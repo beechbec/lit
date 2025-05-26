@@ -33,7 +33,7 @@ export default function Navbar({
             href="/navbar-pages/somans-story"
             className={linkClass("somans-story")}
           >
-            <span className="font-extrabold">Soman's Story</span>
+            <span className="font-extrabold">About the Author</span>
           </Link>
           <Link
             href="/navbar-pages/legend-unfolds"

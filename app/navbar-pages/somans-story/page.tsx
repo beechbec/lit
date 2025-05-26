@@ -10,38 +10,29 @@ export default function SomansStory() {
         <Navbar bgColor="#253544" textColor="white" />
       </div>
 
-      <div className="container py-24 px-12">
-        <div className="grid md:grid-cols-3 gap-8 items-start">
-          <div className="md:col-span-2">
-            <h1 className="text-3xl font-bold mb-2">Soman Chainani</h1>
-            <p className="text-gray-600 mb-6">Author of The School for Good and Evil series</p>
-
-            <div className="space-y-4 mb-8">
-              <p className="text-sm text-gray-600">
-                Soman Chainani is the New York Times bestselling author of The School for Good and Evil series. The
-                series has sold over 3.5 million copies, been translated into 30 languages, and has been adapted into a
-                major motion picture from Netflix, which debuted at #1 in 2022.
-              </p>
-              <p className="text-sm text-gray-600">
-                A graduate of Harvard University and Columbia University's MFA Film Program, Soman began his career as a
-                screenwriter and director. His films have played at over 150 film festivals around the world, and his
-                writing awards include honors from Big Bear Lake, the CAPE Foundation, and the Sun Valley Writers'
-                Fellowship.
-              </p>
-              <p className="text-sm text-gray-600">
-                In 2023, Soman launched BEASTS & BEAUTY: DANGEROUS TALES, a New York Times bestselling collection of
-                dangerous fairy tales, and in 2024, he released FALL OF THE SCHOOL FOR GOOD AND EVIL, the first book in
-                a brand new trilogy.
-              </p>
-            </div>
-
+      <div className="container py-24 px-12 max-w-6xl mx-auto">
+        {/* Hero Section */}
+        <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
+          <div>
+            <h1 className="text-5xl font-bold mb-6 text-amber-900 leading-tight">Soman Chainani</h1>
+            <p className="text-xl text-amber-700 mb-8 leading-relaxed">
+              New York Times Bestselling Author of The School for Good and Evil series
+            </p>
             <div className="flex space-x-4">
-              <Button variant="default" className="bg-amber-700 hover:bg-amber-800 text-xs" asChild>
-                <Link href="https://www.instagram.com/somanc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">
+              <Button variant="default" className="bg-amber-700 hover:bg-amber-800 text-base px-6 py-3" asChild>
+                <Link
+                  href="https://www.instagram.com/somanc?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Follow on Instagram
                 </Link>
               </Button>
-              <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-50 text-xs" asChild>
+              <Button
+                variant="outline"
+                className="border-amber-700 text-amber-700 hover:bg-amber-50 text-base px-6 py-3"
+                asChild
+              >
                 <Link href="https://www.somanchainani.com/" target="_blank" rel="noopener noreferrer">
                   Official Website
                 </Link>
@@ -49,166 +40,168 @@ export default function SomansStory() {
             </div>
           </div>
 
-          <div>
-            <div className="relative aspect-square overflow-hidden rounded-lg transition-transform duration-300 hover:scale-[1.02] flex items-center justify-center">
-              <Image src="/soman.png" alt="Soman Chainani" fill className="object-contain" />
+          <div className="flex justify-center">
+            <div className="relative w-80 h-80 overflow-hidden rounded-2xl shadow-xl bg-white p-4">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/soman.png"
+                  alt="Soman Chainani"
+                  fill
+                  className="object-cover rounded-lg"
+                  style={{ objectPosition: "center top" }}
+                />
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Featured Works Section */}
-        <section className="mt-20">
-          <h2 className="text-3xl font-bold text-center text-amber-800 mb-4">FEATURED WORKS</h2>
-          <p className="text-center max-w-3xl mx-auto mb-12 text-sm text-gray-600">
-            Step into the magical worlds of Soman Chainani—where fairy tales are rewritten and destinies are challenged.
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-            {/* Book 1 - Prequel */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book1.png"
-                  alt="Rise of the School for Good and Evil"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
+        {/* Main Content */}
+        <div className="space-y-16">
+          {/* About Section */}
+          <section>
+            <h2 className="text-3xl font-bold mb-8 text-amber-800 border-b-2 border-amber-200 pb-4">About</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-amber-700">Personal Background</h3>
+                <p className="text-lg text-gray-700 mb-4 leading-relaxed">
+                  Born on August 2, 1979, in Miami, Florida, Soman Chainani was raised in Key Biscayne in a
+                  multicultural Indian-American household. As of May 26, 2025, he is 45 years old.
+                </p>
               </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">Rise of the School for Good and Evil</h3>
-                <p className="text-xs text-gray-600">The prequel to the beloved series</p>
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-amber-700">Education</h3>
+                <p className="text-lg text-gray-700 mb-2 leading-relaxed">
+                  <strong>Harvard University:</strong> Graduated summa cum laude in 2001 with a self-designed major in
+                  English & American Literature focusing on fairy tales and the psychology of villains.
+                </p>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  <strong>Columbia University:</strong> Earned an MFA in Film, receiving the FMI Fellowship for Writing
+                  and Directing.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Career Achievements */}
+          <section>
+            <h2 className="text-3xl font-bold mb-8 text-amber-800 border-b-2 border-amber-200 pb-4">
+              Career Achievements
+            </h2>
+
+            <div className="mb-8">
+              <h3 className="text-2xl font-semibold mb-6 text-amber-700">The School for Good & Evil Series</h3>
+              <div className="bg-amber-50 rounded-lg p-6 border-l-4 border-amber-600">
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li>• Published in 2013, debuted at #7 on the New York Times Best Seller list</li>
+                  <li>• Over 4.5 million copies sold worldwide</li>
+                  <li>• Translated into 35 languages across six continents</li>
+                  <li>• Netflix adaptation premiered October 19, 2022, debuting at #1 in over 80 countries</li>
+                </ul>
               </div>
             </div>
 
-            {/* Book 2 - First Book */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book2.jpg"
-                  alt="The School for Good and Evil"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-amber-700">Film & Screenwriting</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Began his career as a screenwriter and director. His short films have screened at over 150 film
+                  festivals and won more than 30 jury and audience awards.
+                </p>
               </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">The School for Good and Evil</h3>
-                <p className="text-xs text-gray-600">The first novel in the epic series that started it all</p>
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-amber-700">Awards & Recognition</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  Honors from Big Bear Lake, the CAPE Foundation, the Sun Valley Writers' Fellowship, and the Shasha
+                  Grant.
+                </p>
               </div>
+            </div>
+          </section>
+
+          {/* Recent Works */}
+          <section>
+            <h2 className="text-3xl font-bold mb-8 text-amber-800 border-b-2 border-amber-200 pb-4">Recent Works</h2>
+            <div className="space-y-6">
+              <div className="bg-white rounded-lg p-6 shadow-md border border-amber-100">
+                <h3 className="text-xl font-semibold mb-3 text-amber-700">Beasts & Beauty: Dangerous Tales (2021)</h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  A collection of twelve reimagined fairy tales that debuted on the New York Times bestseller list.
+                </p>
+              </div>
+              <div className="bg-white rounded-lg p-6 shadow-md border border-amber-100">
+                <h3 className="text-xl font-semibold mb-3 text-amber-700">
+                  Fall of the School for Good and Evil (2024)
+                </h3>
+                <p className="text-lg text-gray-700 leading-relaxed">
+                  The first book in a new prequel trilogy to the original School series.
+                </p>
+              </div>
+            </div>
+          </section>
+
+          {/* Creative Process */}
+          <section>
+            <h2 className="text-3xl font-bold mb-8 text-amber-800 border-b-2 border-amber-200 pb-4">
+              Creative Inspiration
+            </h2>
+            <div className="bg-amber-800 text-white rounded-lg p-8">
+              <blockquote className="text-xl italic text-center mb-4 leading-relaxed">
+                "I learned everything I know about pacing and enchantment from Disney—frame by frame, VHS by VHS"
+              </blockquote>
+              <p className="text-center text-amber-200">— Soman Chainani</p>
             </div>
 
-            {/* Book 3 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book3.png"
-                  alt="A World Without Princes"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
+            <div className="grid md:grid-cols-3 gap-6 mt-8">
+              <div className="text-center">
+                <h3 className="text-lg font-semibold mb-3 text-amber-700">Disney Influence</h3>
+                <p className="text-base text-gray-700">
+                  Grew up watching Disney VHS classics, learning storytelling fundamentals frame by frame.
+                </p>
               </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">A World Without Princes</h3>
-                <p className="text-xs text-gray-600">The second novel in the New York Times bestselling series</p>
+              <div className="text-center">
+                <h3 className="text-lg font-semibold mb-3 text-amber-700">Fairy Tale Research</h3>
+                <p className="text-base text-gray-700">
+                  At Harvard, studied darker fairy-tale variants and sought to reclaim their moral complexity.
+                </p>
+              </div>
+              <div className="text-center">
+                <h3 className="text-lg font-semibold mb-3 text-amber-700">Villain Psychology</h3>
+                <p className="text-base text-gray-700">
+                  Focus on female villains inspired the dual-camp structure challenging Good and Evil.
+                </p>
               </div>
             </div>
+          </section>
 
-            {/* Book 4 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book4.png"
-                  alt="The Last Ever After"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
+          {/* Future Projects */}
+          <section>
+            <h2 className="text-3xl font-bold mb-8 text-amber-800 border-b-2 border-amber-200 pb-4">What's Next</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-amber-700">Upcoming Projects</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li>
+                    • <strong>One True King Trilogy:</strong> Concluding volumes anticipated in late 2025
+                  </li>
+                  <li>
+                    • <strong>Political Thriller:</strong> Standalone adult novel in development
+                  </li>
+                  <li>
+                    • <strong>Netflix Spin-offs:</strong> Exploring additional adaptations
+                  </li>
+                </ul>
               </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">The Last Ever After</h3>
-                <p className="text-xs text-gray-600">The thrilling conclusion to the original trilogy</p>
-              </div>
-            </div>
-
-            {/* Book 5 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book5.jpg"
-                  alt="Quests for Glory"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">Quests for Glory</h3>
-                <p className="text-xs text-gray-600">The fourth novel that begins an exciting new saga</p>
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-amber-700">Fun Facts</h3>
+                <ul className="space-y-3 text-lg text-gray-700">
+                  <li>• Favorite fairy tale: Original Grimm's Snow White</li>
+                  <li>• Writing ritual: Pen and paper for initial drafts</li>
+                  <li>• Pet inspiration: Border collie Luna appears in drafts</li>
+                </ul>
               </div>
             </div>
-
-            {/* Book 6 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book6.webp"
-                  alt="A Crystal of Time"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">A Crystal of Time</h3>
-                <p className="text-xs text-gray-600">The fifth novel in the School for Good and Evil series</p>
-              </div>
-            </div>
-
-            {/* Book 7 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book7.jpg"
-                  alt="One True King"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">One True King</h3>
-                <p className="text-xs text-gray-600">The sixth and final book in the bestselling series</p>
-              </div>
-            </div>
-
-            {/* Book 8 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book8.png"
-                  alt="Fall of the School for Good and Evil"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">Fall of the School for Good and Evil</h3>
-                <p className="text-xs text-gray-600">The first book in a brand new trilogy</p>
-              </div>
-            </div>
-
-            {/* Book 9 */}
-            <div className="bg-white rounded-lg overflow-hidden shadow-md transition-transform duration-300 hover:translate-y-[-5px]">
-              <div className="relative aspect-[2/3] overflow-hidden">
-                <Image
-                  src="/book9.avif"
-                  alt="Beasts and Beauty: Dangerous Tales"
-                  fill
-                  className="object-cover transition-transform duration-500 hover:scale-105"
-                />
-              </div>
-              <div className="p-4">
-                <h3 className="font-bold mb-1 text-sm">Beasts and Beauty: Dangerous Tales</h3>
-                <p className="text-xs text-gray-600">A collection of dangerous fairy tales</p>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
     </div>
   )
