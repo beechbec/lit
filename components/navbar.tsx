@@ -39,13 +39,13 @@ export default function Navbar({
             href="/navbar-pages/legend-unfolds"
             className={linkClass("legend-unfolds")}
           >
-            <span className="font-extrabold">Legend Unfolds</span>
+            <span className="font-extrabold"> Books & Works</span>
           </Link>
           <Link
             href="/navbar-pages/heroes-villains"
             className={linkClass("heroes-villains")}
           >
-            <span className="font-extrabold">Heroes & Villains</span>
+            <span className="font-extrabold">Character Archetypes </span>
           </Link>
         </div>
         <Link href="/navbar-pages/test-your-fate">
